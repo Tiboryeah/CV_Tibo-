@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerardo Esteban Martínez López | Virtual CV</title>
+    <meta name="description"
+        content="CV Virtual de Gerardo Esteban Martínez López - Estudiante de Ingeniería en Sistemas Computacionales en ESCOM-IPN. Especialista en Desarrollo de Software y Computo en la Nube.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <nav id="navbar">
+        <div class="container">
+            <div class="logo">GEML<span>.</span></div>
+            <ul class="nav-links">
+                <li><a href="#about">Sobre Mí</a></li>
+                <li><a href="#skills">Habilidades</a></li>
+                <li><a href="#experience">Experiencia</a></li>
+                <li><a href="#projects">Proyectos</a></li>
+                <li><a href="#contact" class="btn-primary">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h2 class="reveal">Hola, soy</h2>
+                    <h1 class="reveal">Gerardo Martínez</h1>
+                    <p class="role reveal">Ingeniero en Sistemas Computacionales <span>&bull;</span> ESCOM</p>
+                    <p class="description reveal">
+                        Apasionado por crear soluciones tecnológicas innovadoras en el área de la nube,
+                        comunicación en red y bases de datos. Especialista en arquitecturas robustas y escalables.
+                    </p>
+                    <div class="hero-btns reveal">
+                        <a href="#projects" class="btn-primary">Ver Proyectos</a>
+                        <a href="https://github.com/Gerardo" target="_blank" class="btn-secondary">GitHub</a>
+                    </div>
+                </div>
+                <div class="hero-image reveal">
+                    <div class="profile-frame">
+                        <img src="profile.jpg" alt="Gerardo Martínez" id="profile-pic">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse"></div>
+        </div>
+    </header>
+
+    <main>
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title reveal">Sobre Mí</h2>
+                <div class="about-grid">
+                    <div class="about-card reveal">
+                        <i data-lucide="user"></i>
+                        <h3>Perfil</h3>
+                        <p>Estudiante de Ingeniería en Sistemas Computacionales con experiencia práctica en desarrollo
+                            de software, computo en la nube, redes y reparación de equipos electrónicos.</p>
+                    </div>
+                    <div class="about-card reveal">
+                        <i data-lucide="graduation-cap"></i>
+                        <h3>Formación</h3>
+                        <p><strong>IPN - ESCOM</strong> (2022 - Actualidad)</p>
+                        <p>Preperatoria en-linea SEP (2015-2017)</p>
+                        <p>UnADM (2017-2021)</p>
+                    </div>
+                    <div class="about-card reveal">
+                        <i data-lucide="languages"></i>
+                        <h3>Idiomas</h3>
+                        <div class="lang-item"><span>Español</span>
+                            <div class="dot active"></div>
+                            <div class="dot active"></div>
+                            <div class="dot active"></div>
+                        </div>
+                        <div class="lang-item"><span>Inglés (B1)</span>
+                            <div class="dot active"></div>
+                            <div class="dot active"></div>
+                            <div class="dot"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section bg-alt">
+            <div class="container">
+                <h2 class="section-title reveal">Habilidades</h2>
+                <div class="skills-container">
+                    <div class="skill-category reveal">
+                        <h3>Programación y Backend</h3>
+                        <div class="skill-list">
+                            <span class="skill-tag">C / C++</span>
+                            <span class="skill-tag">C#</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">JavaScript / Node.js</span>
+                            <span class="skill-tag">MongoDB</span>
+                            <span class="skill-tag">SQL (PostgreSQL)</span>
+                        </div>
+                    </div>
+                    <div class="skill-category reveal">
+                        <h3>Frontend y UI</h3>
+                        <div class="skill-list">
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">UX/UI Design</span>
+                            <span class="skill-tag">Diseño Responsivo</span>
+                            <span class="skill-tag">MERN Stack</span>
+                        </div>
+                    </div>
+                    <div class="skill-category reveal">
+                        <h3>Ciencia de Datos e IA</h3>
+                        <div class="skill-list">
+                            <span class="skill-tag">Pandas / NumPy</span>
+                            <span class="skill-tag">Scikit-learn</span>
+                            <span class="skill-tag">PyTorch</span>
+                            <span class="skill-tag">MLOps & Docker</span>
+                            <span class="skill-tag">FastAPI</span>
+                            <span class="skill-tag">MLflow</span>
+                        </div>
+                    </div>
+                    <div class="skill-category reveal">
+                        <h3>Especialidades</h3>
+                        <div class="skill-list">
+                            <span class="skill-tag">Sockets TCP/UDP</span>
+                            <span class="skill-tag">Cloud (GCP)</span>
+                            <span class="skill-tag">UML / Modelado</span>
+                            <span class="skill-tag">Soporte Técnico</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="section">
+            <div class="container">
+                <h2 class="section-title reveal">Experiencia y Soft Skills</h2>
+                <div class="timeline-container">
+                    <div class="timeline-item reveal">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>Social Service – Soporte Técnico</h3>
+                            <p class="date">ESCOM</p>
+                            <p>Reparación y mantenimiento de equipos electrónicos, computadoras y laptops. Diagnóstico
+                                de fallas y optimización del rendimiento.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item reveal">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>Desarrollador de Software</h3>
+                            <p class="date">Proyectos Académicos y Personales</p>
+                            <ul>
+                                <li>Desarrollo de aplicaciones cliente-servidor con sockets TCP/UDP.</li>
+                                <li>Diseño de APIs y gestión de datos en MongoDB.</li>
+                                <li>Implementación de interfaces visuales con C#, C++ y React.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="soft-skills-grid mt-4">
+                    <h3 class="reveal">Soft Skills</h3>
+                    <div class="soft-skills-container">
+                        <span class="soft-tag reveal">Comunicación</span>
+                        <span class="soft-tag reveal">Trabajo en Equipo</span>
+                        <span class="soft-tag reveal">Pensamiento Crítico</span>
+                        <span class="soft-tag reveal">Liderazgo</span>
+                        <span class="soft-tag reveal">Adaptabilidad</span>
+                        <span class="soft-tag reveal">Proactividad</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section bg-alt">
+            <div class="container">
+                <h2 class="section-title reveal">Proyectos Destacados</h2>
+                <div class="projects-grid">
+                    <div class="project-card reveal">
+                        <div class="project-icon"><i data-lucide="shield-check"></i></div>
+                        <h3>Riesgos en Línea (TT 2026)</h3>
+                        <p>Plataforma para que padres monitoreen y prevengan riesgos digitales en niños. Módulos
+                            interactivos y diseño UX/UI accesible.</p>
+                        <div class="project-tags">
+                            <span>React</span>
+                            <span>UX/UI</span>
+                            <span>Seguridad</span>
+                        </div>
+                    </div>
+                    <div class="project-card reveal">
+                        <div class="project-icon"><i data-lucide="bot"></i></div>
+                        <h3>Bot de Discord - Admin</h3>
+                        <p>Bot personalizado desplegado en Google Cloud para gestión automatizada de servidores, manejo
+                            de permisos y disponibilidad 24/7.</p>
+                        <div class="project-tags">
+                            <span>Python</span>
+                            <span>Google Cloud</span>
+                            <span>Discord API</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container text-center">
+                <h2 class="section-title reveal">Contacto</h2>
+                <div class="contact-info reveal">
+                    <p><i data-lucide="mail"></i> tiboryeahrock@gmail.com</p>
+                    <p><i data-lucide="phone"></i> 5640006312</p>
+                    <p><i data-lucide="map-pin"></i> Toltecas 508, CDMX</p>
+                </div>
+                <div class="social-links reveal mt-2">
+                    <a href="https://linkedin.com/Gerardo" target="_blank"><i data-lucide="linkedin"></i></a>
+                    <a href="https://github.com/Gerardo" target="_blank"><i data-lucide="github"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Gerardo Martínez. Diseñado con <i data-lucide="heart" class="heart-icon"></i> por
+                Antigravity.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
