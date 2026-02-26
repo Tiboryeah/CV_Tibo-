@@ -239,7 +239,7 @@ function App() {
             >
               <div className="profile-card-premium glass">
                 <div className="profile-img-container">
-                  <img src="/profile.jpg" alt="Gerardo Martínez" />
+                  <img src={`${import.meta.env.BASE_URL}profile.jpg`} alt="Gerardo Martínez" />
                 </div>
                 <div className="profile-stats">
                   <div className="stat">
