@@ -8,7 +8,7 @@ import {
   Layers, ChevronDown, Award, Globe,
   Calendar, CheckCircle2, FlaskConical, MessageSquare,
   Users, Lightbulb, Brain, Gauge, Clock,
-  Zap, Heart, Target, Languages
+  Zap, Heart, Target, Languages, Download
 } from 'lucide-react';
 import './App.css';
 
@@ -20,7 +20,8 @@ const translations = {
       subtitle: 'Software Engineer & Cloud Specialist',
       desc: 'Enfocado en la creación de soluciones técnicas resilientes y el desarrollo colaborativo de software. Mi meta es aportar valor de ingeniería a proyectos que impacten positivamente.',
       viewPort: 'Ver Portafolio',
-      collab: 'Colaboremos'
+      collab: 'Colaboremos',
+      download: 'Descargar CV'
     },
     stats: { profile: 'Perfil', hours: 'Horario Libre', location: 'Sede', valueProfile: 'Software Eng.', valueHours: '7 AM - 3 PM', valueLocation: 'CDMX, MX' },
     about: { title: 'Visión & Compromiso', bio: 'Soy un estudiante de Ingeniería en Sistemas Computacionales con experiencia práctica en desarrollo de software, computo en la nube, redes y reparación de equipos electrónicos. Me apasiona crear soluciones funcionales, especialmente proyectos relacionados a la nube, comunicación en red y bases de datos. Me caracterizo por aprender rápido, ser responsable y trabajar bien en equipo.', edu: 'Formación Académica' },
@@ -36,7 +37,8 @@ const translations = {
       subtitle: 'Software Engineer & Cloud Specialist',
       desc: 'Focused on creating resilient technical solutions and collaborative software development. My goal is to provide engineering value to projects that make a positive impact.',
       viewPort: 'View Portfolio',
-      collab: 'Let\'s Collab'
+      collab: 'Let\'s Collab',
+      download: 'Download CV'
     },
     stats: { profile: 'Profile', hours: 'Free Hours', location: 'Location', valueProfile: 'Software Eng.', valueHours: '7 AM - 3 PM', valueLocation: 'CDMX, MX' },
     about: { title: 'Vision & Commitment', bio: 'I am a Systems Engineering student with practical experience in software development, cloud computing, networking, and electronics repair. I am passionate about creating functional solutions, especially projects related to cloud, network communication, and databases. I am characterized by learning fast, being responsible, and working well in a team.', edu: 'Academic Background' },
@@ -219,6 +221,13 @@ function App() {
               <div className="hero-actions">
                 <a href="#projects" className="btn-primary">{t.hero.viewPort} <ArrowRight size={18} /></a>
                 <a href="#contact" className="btn-secondary">{t.hero.collab}</a>
+                <a
+                  href={`${import.meta.env.BASE_URL}cv/CV_GerardoMartinez.pdf`}
+                  download
+                  className="btn-outline"
+                >
+                  <Download size={18} /> {t.hero.download}
+                </a>
               </div>
             </motion.div>
 

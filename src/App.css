@@ -250,6 +250,25 @@
   transform: translateY(-3px);
 }
 
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--blue-primary);
+  color: var(--blue-primary) !important;
+  padding: 0.8rem 1.8rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: var(--transition);
+}
+
+.btn-outline:hover {
+  background: var(--blue-soft);
+  transform: translateY(-3px);
+}
+
 /* Profile Card - Refined */
 .profile-card-premium {
   background: var(--bg-card);
