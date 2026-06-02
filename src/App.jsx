@@ -505,7 +505,13 @@ const TerminalCLI = ({ lang, t }) => {
 
   const scrollBottom = () => {
     if (termBodyRef.current) {
-      termBodyRef.current.scrollTop = termBodyRef.current.scrollHeight;
+      const prompts = termBodyRef.current.querySelectorAll('.prompt-line');
+      if (prompts.length > 0) {
+        const lastPrompt = prompts[prompts.length - 1];
+        termBodyRef.current.scrollTop = lastPrompt.offsetTop;
+      } else {
+        termBodyRef.current.scrollTop = termBodyRef.current.scrollHeight;
+      }
     }
   };
 
@@ -848,7 +854,7 @@ const TerminalCLI = ({ lang, t }) => {
           }
           if (line.type === 'prompt') {
             return (
-              <div key={i} className="line" style={{ margin: '12px 0 2px' }}>
+              <div key={i} className="line prompt-line" style={{ margin: '12px 0 2px' }}>
                 <span className="prompt">gerardo@cv <span className="path">~/cv</span> <span className="arrow">❯</span></span> <span className="cmd">{line.content}</span>
               </div>
             );
