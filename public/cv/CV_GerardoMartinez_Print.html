@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Gerardo Esteban Martínez López — CV</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #06050b;
+      --bg2: #0a0814;
+      --card: #0e0b1a;
+      --line: rgba(168, 85, 247, 0.16);
+      --line2: rgba(168, 85, 247, 0.32);
+      --violet: #a855f7;
+      --vbright: #c084fc;
+      --vsoft: #d8b4fe;
+      --magenta: #e879f9;
+      --cyan: #22d3ee;
+      --green: #5ef2b4;
+      --txt: #efecf8;
+      --muted: #968fb4;
+      --dim: #5f5880;
+    }
+
+    @page {
+      size: letter;
+      margin: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      width: 8.5in;
+      height: 11in;
+      background: var(--bg);
+      color: var(--txt);
+      font-family: 'Space Grotesk', sans-serif;
+      padding: 0.45in;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Backdrop grids */
+    .grid-bg {
+      position: absolute;
+      inset: 0;
+      background-image: 
+        linear-gradient(rgba(168, 85, 247, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(168, 85, 247, 0.035) 1px, transparent 1px);
+      background-size: 40px 40px;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      justify-content: space-between;
+    }
+
+    /* HEADER */
+    header {
+      border-bottom: 1px solid var(--line2);
+      padding-bottom: 15px;
+      margin-bottom: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    .header-left h1 {
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+
+    .header-left h1 span {
+      background: linear-gradient(90deg, var(--vsoft), var(--magenta) 60%, var(--cyan));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .header-left .title-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      color: var(--vbright);
+      margin-top: 5px;
+      font-weight: 500;
+    }
+
+    .header-right {
+      text-align: right;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .header-right a {
+      color: var(--cyan);
+      text-decoration: none;
+    }
+
+    /* MAIN CONTENT */
+    .main-grid {
+      display: grid;
+      grid-template-columns: 1.35fr 1fr;
+      gap: 30px;
+      flex: 1;
+    }
+
+    .col-left {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .col-right {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    section {
+      position: relative;
+    }
+
+    .seclabel {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--magenta);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .seclabel::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, var(--line2), transparent);
+    }
+
+    /* EXPERIENCE & PROJECTS */
+    .item-block {
+      margin-bottom: 12px;
+    }
+
+    .item-block:last-child {
+      margin-bottom: 0;
+    }
+
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 3px;
+    }
+
+    .item-header h3 {
+      font-size: 15px;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .item-header .date-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10.5px;
+      color: var(--vbright);
+    }
+
+    .item-subheader {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--vsoft);
+      margin-bottom: 6px;
+    }
+
+    .item-block ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .item-block li {
+      position: relative;
+      padding-left: 14px;
+      color: var(--muted);
+      font-size: 12.5px;
+      line-height: 1.45;
+    }
+
+    .item-block li::before {
+      content: "❯";
+      position: absolute;
+      left: 0;
+      color: var(--violet);
+      font-size: 10px;
+    }
+
+    .proj-desc {
+      color: var(--muted);
+      font-size: 12.5px;
+      line-height: 1.45;
+      margin-bottom: 5px;
+    }
+
+    .proj-impact {
+      font-size: 11.5px;
+      color: var(--txt);
+      background: rgba(168, 85, 247, 0.08);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 5px 8px;
+      margin-bottom: 6px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    .tags span {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9.5px;
+      color: var(--cyan);
+      border: 1px solid rgba(34, 211, 238, 0.25);
+      border-radius: 4px;
+      padding: 1px 6px;
+    }
+
+    /* RIGHT COLUMN STYLES */
+    .profile-card {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: rgba(16, 12, 28, 0.5);
+      padding: 12px;
+      font-size: 12.5px;
+      line-height: 1.5;
+      color: var(--muted);
+    }
+
+    .profile-card em {
+      font-style: normal;
+      color: var(--vsoft);
+      font-weight: 500;
+    }
+
+    .sk-bar {
+      margin-bottom: 8px;
+    }
+
+    .sk-bar .sk-info {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11.5px;
+      margin-bottom: 3px;
+    }
+
+    .sk-bar .sk-track {
+      height: 4px;
+      background: #17112b;
+      border-radius: 2px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+    }
+
+    .sk-bar .sk-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--violet), var(--magenta));
+      box-shadow: 0 0 8px var(--magenta);
+    }
+
+    .skills-tech {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: 10px;
+    }
+
+    .skills-tech h4 {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: var(--magenta);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .skills-tech .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    .skills-tech .chips span {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10.5px;
+      color: var(--vsoft);
+      background: rgba(168, 85, 247, 0.05);
+      border: 1px solid var(--line);
+      padding: 2px 7px;
+      border-radius: 6px;
+    }
+
+    .edu-item {
+      margin-bottom: 10px;
+    }
+
+    .edu-item h3 {
+      font-size: 14px;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .edu-item .detail {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--vsoft);
+      margin-top: 2px;
+    }
+
+    .edu-item .period {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: var(--vbright);
+      margin-top: 2px;
+    }
+
+    .cert-row {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      font-size: 12px;
+      margin-bottom: 6px;
+      color: var(--muted);
+    }
+
+    .cert-row .bullet {
+      color: var(--magenta);
+      font-size: 10px;
+    }
+
+    .cert-row .t {
+      color: var(--txt);
+      font-weight: 500;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--line);
+      padding-top: 10px;
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      color: var(--dim);
+    }
+  </style>
+</head>
+<body>
+  <div class="grid-bg"></div>
+  <div class="container">
+    
+    <!-- HEADER -->
+    <header>
+      <div class="header-left">
+        <h1>Gerardo Esteban<br><span>Martínez López</span></h1>
+        <div class="title-tag">FULL_STACK_DEVELOPER</div>
+      </div>
+      <div class="header-right">
+        <div>Email: <a href="mailto:tiboryeahrock@gmail.com">tiboryeahrock@gmail.com</a></div>
+        <div>Teléfono: +52 56 4000 6312</div>
+        <div>GitHub: <a href="https://github.com/Tiboryeah" target="_blank">github.com/Tiboryeah</a></div>
+        <div>LinkedIn: <a href="https://linkedin.com/in/gerardo-esteban-martinez-lopez" target="_blank">in/gerardo-esteban-martinez-lopez</a></div>
+        <div style="margin-top: 2px; color: var(--vbright)">Ciudad de México, México</div>
+      </div>
+    </header>
+
+    <!-- MAIN GRID -->
+    <div class="main-grid">
+      
+      <!-- LEFT COLUMN -->
+      <div class="col-left">
+        
+        <!-- EXPERIENCIA -->
+        <section>
+          <div class="seclabel">Experiencia relevante</div>
+          
+          <div class="item-block">
+            <div class="item-header">
+              <h3>Desarrollador de Software</h3>
+              <span class="date-tag">Ene 2022 — Actualidad</span>
+            </div>
+            <div class="item-subheader">Rol actual & proyectos bajo demanda</div>
+            <ul>
+              <li>Desarrollo de aplicaciones web, APIs y soluciones internas con React, Node.js y Python.</li>
+              <li>Construcción de interfaces, lógica backend, manejo de datos y automatizaciones con criterio de producto.</li>
+              <li>Despliegue y soporte de proyectos a medida con enfoque AI-ready y documentación técnica clara.</li>
+            </ul>
+          </div>
+
+          <div class="item-block">
+            <div class="item-header">
+              <h3>Soporte Técnico y Mantenimiento</h3>
+              <span class="date-tag">Experiencia práctica</span>
+            </div>
+            <div class="item-subheader">ESCOM — Servicio Social</div>
+            <ul>
+              <li>Diagnóstico de fallas, reemplazo de componentes y optimización del rendimiento de equipos.</li>
+              <li>Atención a usuarios, seguimiento de incidencias y aplicación de criterios técnicos documentales.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- PROYECTOS -->
+        <section>
+          <div class="seclabel">Proyectos destacados</div>
+          
+          <div class="item-block">
+            <div class="item-header">
+              <h3>Kuxipilli (TT 2026)</h3>
+              <span class="date-tag"><a href="https://kuxipilli.com/" target="_blank" style="color: var(--cyan); text-decoration: underline;">kuxipilli.com</a></span>
+            </div>
+            <div class="proj-desc">Plataforma preventiva orientada a madres y padres de familia, enfocada en seguridad digital y experiencia de uso clara.</div>
+            <div class="proj-impact">Muestra capacidad para trabajar producto, frontend, documentación formal e ISO/IEEE SRS.</div>
+            <div class="tags"><span>React</span><span>MERN</span><span>UX/UI</span><span>ISO/IEEE SRS</span></div>
+          </div>
+
+          <div class="item-block">
+            <div class="item-header">
+              <h3>Kokoro Souls</h3>
+              <span class="date-tag"><a href="https://tiboryeah.github.io/kokoro-3-souls/index.html" target="_blank" style="color: var(--cyan); text-decoration: underline;">Jugar juego</a></span>
+            </div>
+            <div class="proj-desc">Videojuego interactivo en desarrollo con Python/Ren'Py, combinando narrativa estructurada y control de estado.</div>
+            <div class="tags"><span>Python</span><span>Ren'Py</span><span>Game Design</span><span>Scripting</span></div>
+          </div>
+
+          <div class="item-block">
+            <div class="item-header">
+              <h3>Discord Server Admin Bot</h3>
+              <span class="date-tag">Google Cloud</span>
+            </div>
+            <div class="proj-desc">Bot desplegado en GCP para automatizar tareas administrativas, comandos y control operativo.</div>
+            <div class="tags"><span>Python</span><span>Google Cloud</span><span>APIs</span><span>Automation</span></div>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div class="col-right">
+        
+        <!-- PERFIL -->
+        <section>
+          <div class="seclabel">Perfil profesional</div>
+          <div class="profile-card">
+            Construyo aplicaciones web, APIs, automatizaciones y sistemas internos con una base técnica seria: React, Node.js, Python, bases de datos y cloud. Mi enfoque combina <em>desarrollo, criterio de producto y documentación clara</em> para entregar soluciones funcionales y fáciles de mantener.
+          </div>
+        </section>
+
+        <!-- HABILIDADES -->
+        <section>
+          <div class="seclabel">Habilidades de control</div>
+          
+          <div class="sk-bar">
+            <div class="sk-info"><span style="color: #fff">JavaScript / TypeScript</span><span>90%</span></div>
+            <div class="sk-track"><div class="sk-fill" style="width: 90%"></div></div>
+          </div>
+          <div class="sk-bar">
+            <div class="sk-info"><span style="color: #fff">Frontend · React · CSS</span><span>88%</span></div>
+            <div class="sk-track"><div class="sk-fill" style="width: 88%"></div></div>
+          </div>
+          <div class="sk-bar">
+            <div class="sk-info"><span style="color: #fff">Backend & APIs · Node.js</span><span>85%</span></div>
+            <div class="sk-track"><div class="sk-fill" style="width: 85%"></div></div>
+          </div>
+          <div class="sk-bar">
+            <div class="sk-info"><span style="color: #fff">Bases de datos · SQL / NoSQL</span><span>80%</span></div>
+            <div class="sk-track"><div class="sk-fill" style="width: 80%"></div></div>
+          </div>
+
+          <div class="skills-tech">
+            <h4>Lenguajes y Frameworks</h4>
+            <div class="chips">
+              <span>JavaScript</span><span>React</span><span>Node.js</span><span>Python</span><span>C#</span><span>.NET</span><span>FastAPI</span><span>C/C++</span>
+            </div>
+          </div>
+
+          <div class="skills-tech">
+            <h4>Cloud & Datos</h4>
+            <div class="chips">
+              <span>Google Cloud</span><span>Docker</span><span>MongoDB</span><span>PostgreSQL</span><span>SQL</span><span>Git/GitHub</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- EDUCACIÓN -->
+        <section>
+          <div class="seclabel">Formación</div>
+          <div class="edu-item">
+            <h3>Ingeniería en Sistemas Computacionales</h3>
+            <div class="detail">ESCOM IPN · Escuela Superior de Cómputo</div>
+            <div class="period">2022 — Presente</div>
+          </div>
+        </section>
+
+        <!-- CERTIFICACIONES -->
+        <section>
+          <div class="seclabel">Certificaciones</div>
+          <div class="cert-row">
+            <span class="bullet">❖</span>
+            <div><span class="t">Cloud Computing</span><br><span style="font-size: 10px;">Google Cloud · Especialización (2024)</span></div>
+          </div>
+          <div class="cert-row">
+            <span class="bullet">❖</span>
+            <div><span class="t">Desarrollo Web Full Stack</span><br><span style="font-size: 10px;">Autodidacta / Proyectos Reales (2023)</span></div>
+          </div>
+        </section>
+
+      </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <div>Gerardo Esteban Martínez López · CV de Desarrollo</div>
+      <div>https://Tiboryeah.github.io/CV_Tibo-/</div>
+    </footer>
+
+  </div>
+</body>
+</html>
