@@ -1775,10 +1775,6 @@ footer a {
   line-height: 1.15;
   font-weight: bold;
   white-space: pre;
-  min-height: 160px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   user-select: none;
   text-shadow: 0 0 8px rgba(168, 85, 247, 0.3);
 }
