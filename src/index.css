@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 :root {
-  font-family: 'Instrument Sans', sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
   color-scheme: dark;
 }
 
@@ -18,10 +18,10 @@ html {
 body {
   min-width: 320px;
   min-height: 100vh;
-  font-family: 'Instrument Sans', sans-serif;
-  background: #07111f;
-  color: #f4f7fb;
-  line-height: 1.55;
+  font-family: 'Inter', system-ui, sans-serif;
+  background: #07080b;
+  color: #f7f8fb;
+  line-height: 1.62;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
@@ -41,6 +41,7 @@ h3,
 h4,
 .brand-text {
   font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
 }
 
 a {
@@ -57,7 +58,7 @@ button {
 }
 
 ::selection {
-  background: rgba(116, 192, 252, 0.35);
+  background: rgba(65, 211, 189, 0.35);
   color: #fff;
 }
 
@@ -66,7 +67,7 @@ button {
 }
 
 ::-webkit-scrollbar-track {
-  background: #07111f;
+  background: #10131a;
 }
 
 ::-webkit-scrollbar-thumb {
