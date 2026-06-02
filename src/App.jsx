@@ -58,7 +58,10 @@ const ALIASES = {
   limpiar: 'clear',
   kokoro: 'kokoro',
   souls: 'kokoro',
-  kokorosouls: 'kokoro'
+  kokorosouls: 'kokoro',
+  kuxipilli: 'kuxipilli',
+  kuxi: 'kuxipilli',
+  tt: 'kuxipilli'
 };
 
 const ORDER = ['about', 'experience', 'education', 'skills', 'projects', 'services', 'certs', 'contact'];
@@ -496,6 +499,80 @@ const SectionTitle = ({ eyebrow, title, align = 'left' }) => (
   </div>
 );
 
+// Interactive Kuxipilli Medallion Easter Egg
+const KuxipilliAnimation = ({ lang }) => {
+  const [progress, setProgress] = useState(0);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    let timer = setInterval(() => {
+      setProgress(prev => {
+        if (prev >= 100) {
+          clearInterval(timer);
+          setLoading(false);
+          return 100;
+        }
+        return prev + 20;
+      });
+    }, 60);
+    return () => clearInterval(timer);
+  }, []);
+
+  if (loading) {
+    const bars = Math.round(progress / 5);
+    const loadingStr = '█'.repeat(bars) + '░'.repeat(20 - bars);
+    return (
+      <div className="kuxi-boot">
+        <div className="line gr">✦ [KUXIPILLI PREVENTIVE SYSTEM] ✦</div>
+        <div className="line muted">// {lang === 'es' ? 'Inicializando plataforma...' : 'Initializing platform...'}</div>
+        <div className="line" style={{ marginTop: '4px' }}>
+          <span className="cyan">{loadingStr}</span> <span className="v">{progress}%</span>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="kuxi-container">
+      <div className="kuxi-header">
+        ▲ KUXIPILLI ▲
+      </div>
+      <div className="kuxi-content">
+        <pre className="kuxi-logo">
+          <span className="p">             .-------------------.</span>{"\n"}
+          <span className="p">           .-'  </span><span className="cy">▲</span><span className="p">  ███████  </span><span className="cy">▲</span><span className="p">  '-.</span>{"\n"}
+          <span className="p">         .'   </span><span className="cy">▄█▄</span><span className="p">  ███████  </span><span className="cy">▄█▄</span><span className="p">   '.</span>{"\n"}
+          <span className="p">        /    █████  ▀███▀  █████    \</span>{"\n"}
+          <span className="p">       |   </span><span className="mag">■</span><span className="p">  ▀█▀  </span><span className="v">.-----.</span><span className="p">  ▀█▀  </span><span className="mag">■</span><span className="p">   |</span>{"\n"}
+          <span className="p">       |  ███     </span><span className="v">/  (•◡•) \</span><span className="p">    ███  |</span>{"\n"}
+          <span className="p">       |   </span><span className="mag">■</span><span className="p">      </span><span className="v">| ▄ </span><span className="mag">❣</span><span className="v"> ▄  |</span><span className="p">     </span><span className="mag">■</span><span className="p">   |</span>{"\n"}
+          <span className="p">       |  ███      </span><span className="v">\ ▀▀▀▀ /</span><span className="p">     ███  |</span>{"\n"}
+          <span className="p">       |   </span><span className="mag">■</span><span className="p">  ▄█▄   </span><span className="v">'-----'</span><span className="p"> ▄█▄  </span><span className="mag">■</span><span className="p">   |</span>{"\n"}
+          <span className="p">        \    █████  ▄███▄  █████    /</span>{"\n"}
+          <span className="p">         '.   ▀█▀  ███████  ▀█▀   .'</span>{"\n"}
+          <span className="p">           '-.  </span><span className="cy">▼</span><span className="p">  ███████  </span><span className="cy">▼</span><span className="p">  .-'</span>{"\n"}
+          <span className="p">             '-------------------'</span>
+        </pre>
+        <div className="kuxi-details">
+          <div className="line"><span className="key">{lang === 'es' ? 'Proyecto:' : 'Project:'}</span> Kuxipilli (TT 2026)</div>
+          <div className="line"><span className="key">{lang === 'es' ? 'Objetivo:' : 'Objective:'}</span> {lang === 'es' ? 'Seguridad digital preventiva familiar' : 'Preventive digital safety for families'}</div>
+          <div className="line"><span className="key">Stack:</span> React · MERN · UX/UI · ISO/IEEE SRS</div>
+          <div className="line" style={{ marginTop: '10px' }}>
+            <a 
+              href="https://kuxipilli.com/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="kuxi-link"
+            >
+              {lang === 'es' ? 'Visitar plataforma ↗' : 'Visit platform ↗'}
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 // Interactive Kokoro Souls Pulse Easter Egg
 const KokoroAnimation = ({ lang }) => {
   const [progress, setProgress] = useState(0);
@@ -882,6 +959,8 @@ const TerminalCLI = ({ lang, t }) => {
         );
       case 'kokoro':
         return <KokoroAnimation lang={lang} />;
+      case 'kuxipilli':
+        return <KuxipilliAnimation lang={lang} />;
       case 'all':
         return (
           <div>
