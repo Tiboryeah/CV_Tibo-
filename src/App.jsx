@@ -539,19 +539,18 @@ const KuxipilliAnimation = ({ lang }) => {
       </div>
       <div className="kuxi-content">
         <pre className="kuxi-logo">
-          <span className="p">{"             .-------------------."}</span>{"\n"}
-          <span className="p">{"           .-'  "}</span><span className="cy">{"▲"}</span><span className="p">{"  ███████  "}</span><span className="cy">{"▲"}</span><span className="p">{"  '-."}</span>{"\n"}
-          <span className="p">{"         .'   "}</span><span className="cy">{"▄█▄"}</span><span className="p">{"  ███████  "}</span><span className="cy">{"▄█▄"}</span><span className="p">{"   '."}</span>{"\n"}
-          <span className="p">{"        /    █████  ▀███▀  █████    \\"}</span>{"\n"}
-          <span className="p">{"       |   "}</span><span className="mag">{"■"}</span><span className="p">{"  ▀█▀  "}</span><span className="v">{".-----."}</span><span className="p">{"  ▀█▀  "}</span><span className="mag">{"■"}</span><span className="p">{"   |"}</span>{"\n"}
-          <span className="p">{"       |  ███     "}</span><span className="v">{"/  (•◡•) \\"}</span><span className="p">{"    ███  |"}</span>{"\n"}
-          <span className="p">{"       |   "}</span><span className="mag">{"■"}</span><span className="p">{"      "}</span><span className="v">{"| ▄ "}</span><span className="mag">{"❣"}</span><span className="v">{" ▄  |"}</span><span className="p">{"     "}</span><span className="mag">{"■"}</span><span className="p">{"   |"}</span>{"\n"}
-          <span className="p">{"       |  ███      "}</span><span className="v">{"\\ ▀▀▀▀ /"}</span><span className="p">{"     ███  |"}</span>{"\n"}
-          <span className="p">{"       |   "}</span><span className="mag">{"■"}</span><span className="p">{"  ▄█▄   "}</span><span className="v">{"'-----'"}</span><span className="p">{" ▄█▄  "}</span><span className="mag">{"■"}</span><span className="p">{"   |"}</span>{"\n"}
-          <span className="p">{"        \\    █████  ▄███▄  █████    /"}</span>{"\n"}
-          <span className="p">{"         '.   ▀█▀  ███████  ▀█▀   .'"}</span>{"\n"}
-          <span className="p">{"           '-.  "}</span><span className="cy">{"▼"}</span><span className="p">{"  ███████  "}</span><span className="cy">{"▼"}</span><span className="p">{"  .-'"}</span>{"\n"}
-          <span className="p">{"             '-------------------'"}</span>
+          <span className="p">{"             .▄▄████████▄▄."}</span>{"\n"}
+          <span className="p">{"          .▄███▀▀  "}</span><span className="cy">{"▲"}</span><span className="p">{"  ▀▀███▄."}</span>{"\n"}
+          <span className="p">{"        .▄██▀   ▄█████▄   ▀██▄."}</span>{"\n"}
+          <span className="p">{"       ▄██▀  "}</span><span className="cy">{"■"}</span><span className="p">{"  ▀█████▀  "}</span><span className="cy">{"■"}</span><span className="p">{"  ▀██▄"}</span>{"\n"}
+          <span className="p">{"      ███▀  "}</span><span className="mag">{"▄█▄"}</span><span className="p">{"   "}</span><span className="v">{".---."}</span><span className="p">{"   "}</span><span className="mag">{"▄█▄"}</span><span className="p">{"  ▀██"}</span>{"\n"}
+          <span className="p">{"     ███    ▀█▀ "}</span><span className="v">{"d(  •‿•  )b"}</span><span className="p">{" ▀█▀    ██"}</span>{"\n"}
+          <span className="p">{"     ███         "}</span><span className="v">{"(っ "}</span><span className="mag">{"❣"}</span><span className="v">{" ς)"}</span><span className="p">{"          ██"}</span>{"\n"}
+          <span className="p">{"      ███▀  "}</span><span className="mag">{"▄█▄"}</span><span className="p">{"   "}</span><span className="v">{"\\___/"}</span><span className="p">{"   "}</span><span className="mag">{"▄█▄"}</span><span className="p">{"  ▀██"}</span>{"\n"}
+          <span className="p">{"       ▀██▄  "}</span><span className="cy">{"■"}</span><span className="p">{"  ▄█████▄  "}</span><span className="cy">{"■"}</span><span className="p">{"  ▄██▀"}</span>{"\n"}
+          <span className="p">{"        '▀██▄   ▀█████▀   ▄██▀'"}</span>{"\n"}
+          <span className="p">{"          '▀███▄▄  "}</span><span className="cy">{"▼"}</span><span className="p">{"  ▄▄███▀'"}</span>{"\n"}
+          <span className="p">{"             '▀▀████████▀▀'"}</span>
         </pre>
         <div className="kuxi-details">
           <div className="line"><span className="key">{lang === 'es' ? 'Proyecto:' : 'Project:'}</span> Kuxipilli (TT 2026)</div>
