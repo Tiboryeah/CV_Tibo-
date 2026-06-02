@@ -508,7 +508,11 @@ const TerminalCLI = ({ lang, t }) => {
       const prompts = termBodyRef.current.querySelectorAll('.prompt-line');
       if (prompts.length > 0) {
         const lastPrompt = prompts[prompts.length - 1];
-        termBodyRef.current.scrollTop = lastPrompt.offsetTop;
+        setTimeout(() => {
+          if (termBodyRef.current) {
+            termBodyRef.current.scrollTop = lastPrompt.offsetTop;
+          }
+        }, 30);
       } else {
         termBodyRef.current.scrollTop = termBodyRef.current.scrollHeight;
       }
