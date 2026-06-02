@@ -55,7 +55,10 @@ const ALIASES = {
   contacto: 'contact',
   ayuda: 'help',
   cls: 'clear',
-  limpiar: 'clear'
+  limpiar: 'clear',
+  kokoro: 'kokoro',
+  souls: 'kokoro',
+  kokorosouls: 'kokoro'
 };
 
 const ORDER = ['about', 'experience', 'education', 'skills', 'projects', 'services', 'certs', 'contact'];
@@ -493,6 +496,87 @@ const SectionTitle = ({ eyebrow, title, align = 'left' }) => (
   </div>
 );
 
+// Interactive Kokoro Souls Pulse Easter Egg
+const KokoroAnimation = ({ lang }) => {
+  const [progress, setProgress] = useState(0);
+  const [loading, setLoading] = useState(true);
+  const [frame, setFrame] = useState(0);
+
+  // Load animation simulation
+  useEffect(() => {
+    let timer = setInterval(() => {
+      setProgress(prev => {
+        if (prev >= 100) {
+          clearInterval(timer);
+          setLoading(false);
+          return 100;
+        }
+        return prev + 10;
+      });
+    }, 80);
+    return () => clearInterval(timer);
+  }, []);
+
+  // Pulse animation loop
+  useEffect(() => {
+    if (loading) return;
+    let pulse = setInterval(() => {
+      setFrame(prev => (prev + 1) % 3);
+    }, 450);
+    return () => clearInterval(pulse);
+  }, [loading]);
+
+  if (loading) {
+    const bars = Math.round(progress / 5);
+    const loadingStr = '█'.repeat(bars) + '░'.repeat(20 - bars);
+    return (
+      <div className="kokoro-boot">
+        <div className="line am">✦ [KOKORO SOULS MODULE V1.0] ✦</div>
+        <div className="line muted">// {lang === 'es' ? 'Sincronizando fragmento de alma...' : 'Synchronizing soul fragment...'}</div>
+        <div className="line" style={{ marginTop: '4px' }}>
+          <span className="mag">{loadingStr}</span> <span className="cy">{progress}%</span>
+        </div>
+      </div>
+    );
+  }
+
+  // Heart frames
+  const heartFrames = [
+    // Frame 0: Small
+    `     █▄  ▄█\n     ██████\n      ████\n       ██`,
+    // Frame 1: Medium
+    `    ▄██▄  ▄██▄\n    ██████████\n     ████████\n      ██████\n       ████\n        ██`,
+    // Frame 2: Large
+    `   ▄████▄  ▄████▄\n   ██████████████\n   ██████████████\n    ████████████\n     ██████████\n      ████████\n       ██████\n        ████\n         ██`
+  ];
+
+  return (
+    <div className="kokoro-container">
+      <div className="kokoro-header">
+        <span className="mag">❤</span> KOKORO SOULS <span className="mag">❤</span>
+      </div>
+      <div className="kokoro-game">
+        <pre className="kokoro-heart">{heartFrames[frame]}</pre>
+        <div className="kokoro-details">
+          <div className="line"><span className="key">{lang === 'es' ? 'Proyecto:' : 'Project:'}</span> Kokoro Souls (3 Souls)</div>
+          <div className="line"><span className="key">{lang === 'es' ? 'Motor:' : 'Engine:'}</span> Python (Ren'Py)</div>
+          <div className="line"><span className="key">{lang === 'es' ? 'Desarrollo:' : 'Development:'}</span> {lang === 'es' ? 'En desarrollo activo' : 'In active development'}</div>
+          <div className="line" style={{ marginTop: '10px' }}>
+            <a 
+              href="https://tiboryeah.github.io/kokoro-3-souls/index.html" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="kokoro-link"
+            >
+              {lang === 'es' ? 'Jugar demo / Ver desarrollo ↗' : 'Play demo / View development ↗'}
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 // Interactive CLI Terminal embedded in the Hero
 const TerminalCLI = ({ lang, t }) => {
   const [termLines, setTermLines] = useState([]);
@@ -796,6 +880,8 @@ const TerminalCLI = ({ lang, t }) => {
             </div>
           </div>
         );
+      case 'kokoro':
+        return <KokoroAnimation lang={lang} />;
       case 'all':
         return (
           <div>
