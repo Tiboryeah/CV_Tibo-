@@ -1236,7 +1236,7 @@ function App() {
               <div className="cta rv in d3">
                 <a className="btn solid" href="#contact">{lang === 'es' ? 'Trabajemos juntos' : 'Let\'s collaborate'}</a>
                 <a className="btn ghost" href="#projects">{lang === 'es' ? 'Ver proyectos →' : 'View projects →'}</a>
-                <a className="btn ghost" href={`${import.meta.env.BASE_URL}cv/CV_GerardoMartinez_Print.html`} target="_blank" rel="noopener noreferrer">
+                <a className="btn ghost" href={`${import.meta.env.BASE_URL}cv/CV_GerardoMartinez.pdf`} download>
                   <Download size={15} style={{ marginRight: '5px' }} /> {t.hero.download}
                 </a>
               </div>
