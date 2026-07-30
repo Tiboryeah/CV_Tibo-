@@ -87,7 +87,7 @@ const content = {
       contact: 'Contacto',
     },
     hero: {
-      badge: 'Actualmente trabajando como desarrollador de software',
+      badge: 'Actualmente trabajando en FabricSoft como desarrollador Full Stack',
       titleLead: 'Desarrollo software profesional con foco en',
       titleAccent: 'web, sistemas bajo demanda e integraciones inteligentes',
       subtitle: 'Gerardo Esteban Martínez López',
@@ -120,7 +120,7 @@ const content = {
         },
         {
           title: 'Disponibilidad enfocada',
-          text: 'Actualmente trabajo como desarrollador de software, por eso tomo pocos proyectos externos a la vez para cuidar tiempos, calidad y comunicación.',
+          text: 'Actualmente trabajo en FabricSoft como desarrollador Full Stack, por eso tomo pocos proyectos externos a la vez para cuidar tiempos, calidad y comunicación.',
           icon: Users,
         },
       ],
@@ -187,13 +187,23 @@ const content = {
       title: 'Experiencia relevante',
       items: [
         {
+          role: 'Desarrollador Full Stack',
+          place: 'FabricSoft',
+          period: 'Actualidad',
+          bullets: [
+            'Desarrollo de aplicaciones web completas (frontend y backend) para los productos y clientes de FabricSoft.',
+            'Implementación de funcionalidades con React, Node.js y bases de datos en un entorno profesional de equipo.',
+            'Participación en ciclos de desarrollo ágil, code reviews y entrega continua de software de calidad.',
+          ],
+        },
+        {
           role: 'Desarrollador de software',
-          place: 'Rol actual y proyectos bajo demanda',
+          place: 'Proyectos bajo demanda',
           period: 'Enero 2022 - Actualidad',
           bullets: [
             'Desarrollo de aplicaciones web, sistemas cliente-servidor, APIs y soluciones internas con tecnologías modernas.',
             'Construcción de interfaces, lógica backend, manejo de datos y automatizaciones con criterio de producto.',
-            'Actualmente acepto proyectos externos seleccionados para páginas web, sistemas a medida e integraciones.',
+            'Proyectos externos seleccionados para páginas web, sistemas a medida e integraciones.',
           ],
         },
         {
@@ -298,7 +308,7 @@ const content = {
       contact: 'Contact',
     },
     hero: {
-      badge: 'Currently working as a software developer',
+      badge: 'Currently working at FabricSoft as a Full Stack Developer',
       titleLead: 'Professional software development focused on',
       titleAccent: 'web, custom systems, and intelligent integrations',
       subtitle: 'Gerardo Esteban Martínez López',
@@ -331,7 +341,7 @@ const content = {
         },
         {
           title: 'Focused availability',
-          text: 'I currently work as a software developer, so I take on a limited number of external projects to protect quality, timelines, and communication.',
+          text: 'I currently work at FabricSoft as a Full Stack Developer, so I take on a limited number of external projects to protect quality, timelines, and communication.',
           icon: Users,
         },
       ],
@@ -398,13 +408,23 @@ const content = {
       title: 'Relevant experience',
       items: [
         {
+          role: 'Full Stack Developer',
+          place: 'FabricSoft',
+          period: 'Present',
+          bullets: [
+            'Building end-to-end web applications (frontend and backend) for FabricSoft\'s products and clients.',
+            'Implementing features with React, Node.js, and databases in a professional team environment.',
+            'Participating in agile development cycles, code reviews, and continuous delivery of quality software.',
+          ],
+        },
+        {
           role: 'Software developer',
-          place: 'Current role and custom projects',
+          place: 'Custom projects',
           period: 'January 2022 - Present',
           bullets: [
             'Build web applications, client-server systems, APIs, and internal solutions with modern technologies.',
             'Work across interfaces, backend logic, data handling, and automations with product judgment.',
-            'Currently accepting selected external projects for websites, custom systems, and integrations.',
+            'Selected external projects for websites, custom systems, and integrations.',
           ],
         },
         {
