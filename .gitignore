@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Puppeteer temp files
+.puppeteer_tmp
+
+# PDF generator script (utility only)
+generate_pdf.js
