@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Gerardo Esteban Martínez López — CV Profesional</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink:       #1a1a2e;
+      --ink-mid:   #374151;
+      --ink-soft:  #6b7280;
+      --ink-faint: #9ca3af;
+      --rule:      #e5e7eb;
+      --rule-dark: #d1d5db;
+      --accent:    #1e3a5f;
+      --accent-mid:#2563eb;
+      --accent-bg: #eff6ff;
+      --bg:        #ffffff;
+      --bg2:       #f9fafb;
+      --tag-bg:    #f3f4f6;
+      --tag-text:  #374151;
+    }
+
+    @page {
+      size: letter;
+      margin: 0;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      width: 8.5in;
+      height: 11in;
+      background: var(--bg);
+      color: var(--ink-mid);
+      font-family: 'Inter', sans-serif;
+      font-size: 11.5px;
+      line-height: 1.55;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      overflow: hidden;
+    }
+
+    /* ─── LAYOUT ─── */
+    .page {
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      height: 100%;
+    }
+
+    /* ─── HEADER ─── */
+    header {
+      background: var(--accent);
+      color: #fff;
+      padding: 28px 40px 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 24px;
+    }
+
+    .hd-left h1 {
+      font-family: 'Source Serif 4', serif;
+      font-size: 26px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      color: #fff;
+    }
+
+    .hd-left .role-tag {
+      margin-top: 5px;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.75);
+    }
+
+    .hd-right {
+      text-align: right;
+      font-size: 10.5px;
+      line-height: 1.65;
+      color: rgba(255,255,255,0.8);
+    }
+
+    .hd-right a { color: rgba(255,255,255,0.9); text-decoration: none; }
+
+    .hd-right .loc {
+      margin-top: 4px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.65);
+      font-size: 10px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    /* ─── BODY ─── */
+    .body {
+      display: grid;
+      grid-template-columns: 1fr 0.62fr;
+      gap: 0;
+      overflow: hidden;
+    }
+
+    .col-main {
+      padding: 22px 26px 20px 40px;
+      border-right: 1px solid var(--rule);
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .col-side {
+      padding: 22px 28px 20px 22px;
+      background: var(--bg2);
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    /* ─── SECTION LABELS ─── */
+    .sec-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 9.5px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    .sec-label::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--rule-dark);
+    }
+
+    /* ─── EXPERIENCE ─── */
+    .job { margin-bottom: 13px; }
+    .job:last-child { margin-bottom: 0; }
+
+    .job-hd {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 2px;
+    }
+
+    .job-hd h3 {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .job-hd .period {
+      font-size: 10px;
+      font-weight: 500;
+      color: var(--ink-soft);
+      white-space: nowrap;
+    }
+
+    .job-org {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--accent-mid);
+      margin-bottom: 5px;
+    }
+
+    .job ul {
+      padding-left: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .job li {
+      font-size: 11px;
+      color: var(--ink-mid);
+      line-height: 1.5;
+    }
+
+    /* ─── PROJECTS ─── */
+    .proj { margin-bottom: 11px; }
+    .proj:last-child { margin-bottom: 0; }
+
+    .proj-hd {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 2px;
+    }
+
+    .proj-hd h3 {
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .proj-hd a {
+      font-size: 10px;
+      color: var(--accent-mid);
+      text-decoration: none;
+    }
+
+    .proj-desc {
+      font-size: 11px;
+      color: var(--ink-mid);
+      line-height: 1.5;
+      margin-bottom: 4px;
+    }
+
+    .proj-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    .proj-tags span {
+      font-size: 9.5px;
+      font-weight: 500;
+      background: var(--tag-bg);
+      color: var(--tag-text);
+      border: 1px solid var(--rule-dark);
+      border-radius: 3px;
+      padding: 1px 6px;
+    }
+
+    /* ─── SIDE: PROFILE ─── */
+    .profile-text {
+      font-size: 11px;
+      color: var(--ink-mid);
+      line-height: 1.6;
+    }
+
+    /* ─── SIDE: SKILLS BARS ─── */
+    .sk { margin-bottom: 7px; }
+
+    .sk-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      margin-bottom: 3px;
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    .sk-row span:last-child {
+      font-size: 10px;
+      color: var(--ink-soft);
+      font-weight: 400;
+    }
+
+    .sk-track {
+      height: 4px;
+      background: var(--rule);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .sk-fill {
+      height: 100%;
+      background: var(--accent-mid);
+      border-radius: 2px;
+    }
+
+    /* ─── SIDE: TECH CHIPS ─── */
+    .chips-block { margin-bottom: 8px; }
+
+    .chips-block h4 {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    .chips span {
+      font-size: 10px;
+      font-weight: 500;
+      background: var(--bg);
+      color: var(--ink-mid);
+      border: 1px solid var(--rule-dark);
+      border-radius: 3px;
+      padding: 2px 7px;
+    }
+
+    /* ─── SIDE: EDUCATION ─── */
+    .edu-item { margin-bottom: 8px; }
+    .edu-item:last-child { margin-bottom: 0; }
+
+    .edu-item h3 {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.3;
+    }
+
+    .edu-item .inst {
+      font-size: 10.5px;
+      color: var(--accent-mid);
+      font-weight: 500;
+      margin-top: 1px;
+    }
+
+    .edu-item .period {
+      font-size: 10px;
+      color: var(--ink-soft);
+      margin-top: 1px;
+    }
+
+    /* ─── SIDE: CERTS ─── */
+    .cert-item {
+      display: flex;
+      gap: 7px;
+      align-items: flex-start;
+      margin-bottom: 6px;
+      font-size: 11px;
+    }
+
+    .cert-item:last-child { margin-bottom: 0; }
+
+    .cert-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent-mid);
+      flex-shrink: 0;
+      margin-top: 4px;
+    }
+
+    .cert-item .t { font-weight: 600; color: var(--ink); }
+    .cert-item .m { color: var(--ink-soft); font-size: 10px; }
+
+    /* ─── SIDE: LANGUAGES ─── */
+    .lang-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      margin-bottom: 5px;
+      align-items: center;
+    }
+
+    .lang-row .lname { font-weight: 500; color: var(--ink); }
+    .lang-row .llevel {
+      font-size: 10px;
+      color: var(--ink-soft);
+      background: var(--tag-bg);
+      border: 1px solid var(--rule-dark);
+      border-radius: 3px;
+      padding: 1px 7px;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      border-top: 1px solid var(--rule);
+      padding: 7px 40px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 9px;
+      color: var(--ink-faint);
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- HEADER -->
+    <header>
+      <div class="hd-left">
+        <h1>Gerardo Esteban<br>Martínez López</h1>
+        <div class="role-tag">Full Stack Developer</div>
+      </div>
+      <div class="hd-right">
+        <div>tiboryeahrock@gmail.com</div>
+        <div>+52 56 4000 6312</div>
+        <div><a href="https://github.com/Tiboryeah">github.com/Tiboryeah</a></div>
+        <div><a href="https://linkedin.com/in/gerardo-esteban-martinez-lopez">linkedin.com/in/gerardo-esteban-martinez-lopez</a></div>
+        <div class="loc">Ciudad de México, México</div>
+      </div>
+    </header>
+
+    <!-- BODY -->
+    <div class="body">
+
+      <!-- LEFT COLUMN -->
+      <div class="col-main">
+
+        <!-- EXPERIENCIA -->
+        <section>
+          <div class="sec-label">Experiencia</div>
+
+          <div class="job">
+            <div class="job-hd">
+              <h3>Desarrollador Full Stack</h3>
+              <span class="period">Actualidad</span>
+            </div>
+            <div class="job-org">FabricSoft</div>
+            <ul>
+              <li>Desarrollo de aplicaciones web completas (frontend y backend) para los productos y clientes de FabricSoft.</li>
+              <li>Implementación de funcionalidades con React, Node.js y bases de datos en un entorno profesional de equipo.</li>
+              <li>Participación en ciclos de desarrollo ágil, code reviews y entrega continua de software de calidad.</li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <div class="job-hd">
+              <h3>Desarrollador de Software</h3>
+              <span class="period">Ene 2022 — Actualidad</span>
+            </div>
+            <div class="job-org">Proyectos bajo demanda / Freelance</div>
+            <ul>
+              <li>Desarrollo de aplicaciones web, APIs y sistemas internos con React, Node.js y Python.</li>
+              <li>Construcción de interfaces, lógica backend, manejo de datos y automatizaciones con criterio de producto.</li>
+              <li>Proyectos externos seleccionados para páginas web, sistemas a medida e integraciones.</li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <div class="job-hd">
+              <h3>Soporte Técnico y Mantenimiento</h3>
+              <span class="period">Servicio social</span>
+            </div>
+            <div class="job-org">ESCOM — IPN</div>
+            <ul>
+              <li>Diagnóstico de fallas, reemplazo de componentes y optimización del rendimiento de equipos.</li>
+              <li>Atención a usuarios, seguimiento de incidencias y aplicación de criterios técnicos documentales.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- PROYECTOS -->
+        <section>
+          <div class="sec-label">Proyectos Destacados</div>
+
+          <div class="proj">
+            <div class="proj-hd">
+              <h3>Kuxipilli (TT 2026)</h3>
+              <a href="https://kuxipilli.com">kuxipilli.com</a>
+            </div>
+            <div class="proj-desc">Plataforma preventiva orientada a madres y padres de familia, enfocada en seguridad digital. Demuestra criterio de producto, frontend, documentación formal e ISO/IEEE SRS.</div>
+            <div class="proj-tags">
+              <span>React</span><span>MERN Stack</span><span>UX/UI</span><span>ISO/IEEE SRS</span>
+            </div>
+          </div>
+
+          <div class="proj">
+            <div class="proj-hd">
+              <h3>Discord Server Admin Bot</h3>
+              <span style="font-size:10px; color:var(--ink-soft)">Google Cloud</span>
+            </div>
+            <div class="proj-desc">Bot desplegado en GCP para automatizar tareas administrativas, comandos y control operativo del servidor. Demuestra despliegue real, automatización y mantenimiento de servicios.</div>
+            <div class="proj-tags">
+              <span>Python</span><span>Google Cloud</span><span>APIs</span><span>Automatización</span>
+            </div>
+          </div>
+
+          <div class="proj">
+            <div class="proj-hd">
+              <h3>Sistemas Cliente-Servidor con Sockets</h3>
+            </div>
+            <div class="proj-desc">Implementaciones con TCP/UDP para reforzar fundamentos de comunicación en red y lógica distribuida. Demuestra bases sólidas en networking y resolución técnica.</div>
+            <div class="proj-tags">
+              <span>Python</span><span>C</span><span>TCP/UDP</span><span>Networking</span>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div class="col-side">
+
+        <!-- PERFIL -->
+        <section>
+          <div class="sec-label">Perfil</div>
+          <p class="profile-text">
+            Desarrollador de software con enfoque en aplicaciones web, APIs y sistemas internos. Trabajo con React, Node.js, Python, bases de datos y cloud. Combino desarrollo, criterio de producto y documentación clara para entregar soluciones funcionales y fáciles de mantener.
+          </p>
+        </section>
+
+        <!-- HABILIDADES -->
+        <section>
+          <div class="sec-label">Habilidades</div>
+
+          <div class="sk">
+            <div class="sk-row"><span>JavaScript / TypeScript</span><span>Avanzado</span></div>
+            <div class="sk-track"><div class="sk-fill" style="width:90%"></div></div>
+          </div>
+          <div class="sk">
+            <div class="sk-row"><span>Frontend · React</span><span>Avanzado</span></div>
+            <div class="sk-track"><div class="sk-fill" style="width:88%"></div></div>
+          </div>
+          <div class="sk">
+            <div class="sk-row"><span>Backend · Node.js</span><span>Avanzado</span></div>
+            <div class="sk-track"><div class="sk-fill" style="width:85%"></div></div>
+          </div>
+          <div class="sk">
+            <div class="sk-row"><span>Bases de datos SQL/NoSQL</span><span>Intermedio</span></div>
+            <div class="sk-track"><div class="sk-fill" style="width:80%"></div></div>
+          </div>
+          <div class="sk">
+            <div class="sk-row"><span>Cloud · Docker · DevOps</span><span>Intermedio</span></div>
+            <div class="sk-track"><div class="sk-fill" style="width:70%"></div></div>
+          </div>
+
+          <div style="margin-top: 12px;">
+            <div class="chips-block">
+              <h4>Lenguajes y Frameworks</h4>
+              <div class="chips">
+                <span>JavaScript</span><span>React</span><span>Node.js</span><span>Python</span><span>C#</span><span>.NET</span><span>FastAPI</span><span>C/C++</span>
+              </div>
+            </div>
+            <div class="chips-block" style="margin-top:8px;">
+              <h4>Cloud y Datos</h4>
+              <div class="chips">
+                <span>Google Cloud</span><span>Docker</span><span>MongoDB</span><span>PostgreSQL</span><span>SQL</span><span>Git/GitHub</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- EDUCACIÓN -->
+        <section>
+          <div class="sec-label">Formación</div>
+          <div class="edu-item">
+            <h3>Ingeniería en Sistemas Computacionales</h3>
+            <div class="inst">ESCOM — IPN</div>
+            <div class="period">2022 — Presente</div>
+          </div>
+        </section>
+
+        <!-- CERTIFICACIONES -->
+        <section>
+          <div class="sec-label">Certificaciones</div>
+          <div class="cert-item">
+            <div class="cert-dot"></div>
+            <div>
+              <div class="t">Cloud Computing</div>
+              <div class="m">Google Cloud · Especialización · 2024</div>
+            </div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-dot"></div>
+            <div>
+              <div class="t">Desarrollo Web Full Stack</div>
+              <div class="m">Autodidacta / Proyectos Reales · 2023</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- IDIOMAS -->
+        <section>
+          <div class="sec-label">Idiomas</div>
+          <div class="lang-row">
+            <span class="lname">Español</span>
+            <span class="llevel">Nativo</span>
+          </div>
+          <div class="lang-row">
+            <span class="lname">Inglés</span>
+            <span class="llevel">Técnico profesional</span>
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <span>Gerardo Esteban Martínez López · CV Profesional</span>
+      <span>tiboryeahrock@gmail.com · +52 56 4000 6312</span>
+    </footer>
+
+  </div>
+</body>
+</html>

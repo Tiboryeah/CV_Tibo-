@@ -1236,9 +1236,28 @@ function App() {
               <div className="cta rv in d3">
                 <a className="btn solid" href="#contact">{lang === 'es' ? 'Trabajemos juntos' : 'Let\'s collaborate'}</a>
                 <a className="btn ghost" href="#projects">{lang === 'es' ? 'Ver proyectos →' : 'View projects →'}</a>
-                <a className="btn ghost" href={`${import.meta.env.BASE_URL}cv/CV_GerardoMartinez.pdf`} download>
-                  <Download size={15} style={{ marginRight: '5px' }} /> {t.hero.download}
-                </a>
+                <div className="cv-dl-wrap">
+                  <button className="btn ghost cv-dl-btn">
+                    <Download size={15} style={{ marginRight: '5px' }} /> {t.hero.download}
+                    <span className="cv-dl-arrow">▾</span>
+                  </button>
+                  <div className="cv-dl-menu">
+                    <a href={`${import.meta.env.BASE_URL}cv/CV_GerardoMartinez.pdf`} download>
+                      <span className="cv-dl-icon">✦</span>
+                      <span>
+                        <strong>{lang === 'es' ? 'Versión Premium' : 'Premium Version'}</strong>
+                        <em>{lang === 'es' ? 'Dark · diseño visual' : 'Dark · visual design'}</em>
+                      </span>
+                    </a>
+                    <a href={`${import.meta.env.BASE_URL}cv/CV_GerardoMartinez_Business.pdf`} download>
+                      <span className="cv-dl-icon">◈</span>
+                      <span>
+                        <strong>{lang === 'es' ? 'Versión Empresarial' : 'Business Version'}</strong>
+                        <em>{lang === 'es' ? 'Limpia · profesional' : 'Clean · professional'}</em>
+                      </span>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
             <div className="rv in d2">
