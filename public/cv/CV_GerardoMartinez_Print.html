@@ -118,20 +118,20 @@
     .main-grid {
       display: grid;
       grid-template-columns: 1.35fr 1fr;
-      gap: 30px;
+      gap: 24px;
       flex: 1;
     }
 
     .col-left {
       display: flex;
       flex-direction: column;
-      gap: 15px;
+      gap: 10px;
     }
 
     .col-right {
       display: flex;
       flex-direction: column;
-      gap: 15px;
+      gap: 10px;
     }
 
     section {
@@ -160,7 +160,7 @@
 
     /* EXPERIENCE & PROJECTS */
     .item-block {
-      margin-bottom: 12px;
+      margin-bottom: 8px;
     }
 
     .item-block:last-child {
@@ -175,7 +175,7 @@
     }
 
     .item-header h3 {
-      font-size: 15px;
+      font-size: 13.5px;
       font-weight: 600;
       color: #fff;
     }
@@ -188,24 +188,24 @@
 
     .item-subheader {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 11px;
+      font-size: 10px;
       color: var(--vsoft);
-      margin-bottom: 6px;
+      margin-bottom: 3px;
     }
 
     .item-block ul {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 4px;
+      gap: 2px;
     }
 
     .item-block li {
       position: relative;
       padding-left: 14px;
       color: var(--muted);
-      font-size: 12.5px;
-      line-height: 1.45;
+      font-size: 11.5px;
+      line-height: 1.35;
     }
 
     .item-block li::before {
@@ -218,9 +218,9 @@
 
     .proj-desc {
       color: var(--muted);
-      font-size: 12.5px;
-      line-height: 1.45;
-      margin-bottom: 5px;
+      font-size: 11.5px;
+      line-height: 1.35;
+      margin-bottom: 0;
     }
 
     .proj-impact {
@@ -253,9 +253,9 @@
       border: 1px solid var(--line);
       border-radius: 12px;
       background: rgba(16, 12, 28, 0.5);
-      padding: 12px;
-      font-size: 12.5px;
-      line-height: 1.5;
+      padding: 9px 10px;
+      font-size: 11.5px;
+      line-height: 1.4;
       color: var(--muted);
     }
 
@@ -266,7 +266,7 @@
     }
 
     .sk-bar {
-      margin-bottom: 8px;
+      margin-bottom: 5px;
     }
 
     .sk-bar .sk-info {
@@ -293,8 +293,8 @@
     .skills-tech {
       display: flex;
       flex-direction: column;
-      gap: 6px;
-      margin-top: 10px;
+      gap: 4px;
+      margin-top: 7px;
     }
 
     .skills-tech h4 {
@@ -313,12 +313,12 @@
 
     .skills-tech .chips span {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 10.5px;
+      font-size: 9.5px;
       color: var(--vsoft);
       background: rgba(168, 85, 247, 0.05);
       border: 1px solid var(--line);
-      padding: 2px 7px;
-      border-radius: 6px;
+      padding: 1px 5px;
+      border-radius: 5px;
     }
 
     .edu-item {
@@ -386,7 +386,7 @@
     <header>
       <div class="header-left">
         <h1>Gerardo Esteban<br><span>Martínez López</span></h1>
-        <div class="title-tag">FULL_STACK_DEVELOPER</div>
+        <div class="title-tag">FULL_STACK_DEVELOPER · IA_APLICADA</div>
       </div>
       <div class="header-right">
         <div>Email: <a href="mailto:tiboryeahrock@gmail.com">tiboryeahrock@gmail.com</a></div>
@@ -410,13 +410,12 @@
           <div class="item-block">
             <div class="item-header">
               <h3>Desarrollador Full Stack</h3>
-              <span class="date-tag">Actualidad</span>
+              <span class="date-tag">May 2026 — Actualidad</span>
             </div>
             <div class="item-subheader">FabricSoft</div>
             <ul>
-              <li>Desarrollo de aplicaciones web completas (frontend y backend) para los productos y clientes de FabricSoft.</li>
-              <li>Implementación de funcionalidades con React, Node.js y bases de datos en un entorno profesional de equipo.</li>
-              <li>Participación en ciclos de desarrollo ágil, code reviews y entrega continua de software de calidad.</li>
+              <li>Desarrollo full stack de aplicaciones web con IA en producción: Next.js, React, TypeScript, Node.js/Express, Supabase y OpenAI.</li>
+              <li>Trabajo con pull requests, staging y producción, migraciones versionadas y pruebas con Vitest, Playwright y Postman.</li>
             </ul>
           </div>
 
@@ -427,9 +426,7 @@
             </div>
             <div class="item-subheader">Proyectos bajo demanda</div>
             <ul>
-              <li>Desarrollo de aplicaciones web, APIs y soluciones internas con React, Node.js y Python.</li>
-              <li>Construcción de interfaces, lógica backend, manejo de datos y automatizaciones con criterio de producto.</li>
-              <li>Proyectos externos seleccionados para páginas web, sistemas a medida e integraciones.</li>
+              <li>Aplicaciones web, APIs, sistemas internos y automatizaciones con React, Node.js y Python.</li>
             </ul>
           </div>
 
@@ -440,8 +437,7 @@
             </div>
             <div class="item-subheader">ESCOM — Servicio Social</div>
             <ul>
-              <li>Diagnóstico de fallas, reemplazo de componentes y optimización del rendimiento de equipos.</li>
-              <li>Atención a usuarios, seguimiento de incidencias y aplicación de criterios técnicos documentales.</li>
+              <li>Diagnóstico de fallas, optimización de equipos y seguimiento de incidencias con usuarios.</li>
             </ul>
           </div>
         </section>
@@ -449,15 +445,30 @@
         <!-- PROYECTOS -->
         <section>
           <div class="seclabel">Proyectos destacados</div>
-          
+
+          <div class="item-block">
+            <div class="item-header">
+              <h3>Reclútame</h3>
+              <span class="date-tag"><a href="https://www.reclutame.ai/" target="_blank" style="color: var(--cyan); text-decoration: underline;">reclutame.ai</a></span>
+            </div>
+            <div class="item-subheader">Reclutamiento con IA en producción · Full Stack · Equipo de 2</div>
+            <ul>
+              <li>Módulos de vacantes, compatibilidad, preentrevistas y entrevistas por voz con IA.</li>
+              <li>Compatibilidad con embeddings y pgvector; salidas de OpenAI validadas con esquemas Zod y JSON Schema.</li>
+              <li>Reglas de plan en backend y frontend: 9 rutas protegidas, topes de uso y flujo de contratación completo sin IA.</li>
+              <li>Control de gasto de IA: análisis automático solo para un top diario por vacante y el resto bajo demanda.</li>
+              <li>Sesiones con cierre en todos los dispositivos y límites de inactividad y duración por rol.</li>
+              <li>Rendimiento: CLS móvil de 0.141 a 0, JS inicial de cada panel a menos de la mitad y búsqueda con pg_trgm.</li>
+            </ul>
+            <div class="tags" style="margin-top: 6px;"><span>Next.js</span><span>TypeScript</span><span>Express</span><span>Supabase</span><span>pgvector</span><span>OpenAI</span><span>Vapi</span></div>
+          </div>
+
           <div class="item-block">
             <div class="item-header">
               <h3>Kuxipilli (TT 2026)</h3>
               <span class="date-tag"><a href="https://kuxipilli.com/" target="_blank" style="color: var(--cyan); text-decoration: underline;">kuxipilli.com</a></span>
             </div>
-            <div class="proj-desc">Plataforma preventiva orientada a madres y padres de familia, enfocada en seguridad digital y experiencia de uso clara.</div>
-            <div class="proj-impact">Muestra capacidad para trabajar producto, frontend, documentación formal e ISO/IEEE SRS.</div>
-            <div class="tags"><span>React</span><span>MERN</span><span>UX/UI</span><span>ISO/IEEE SRS</span></div>
+            <div class="proj-desc">Plataforma preventiva para familias enfocada en seguridad digital. React, MERN, UX/UI e ISO/IEEE SRS.</div>
           </div>
 
           <div class="item-block">
@@ -465,8 +476,7 @@
               <h3>Kokoro Souls</h3>
               <span class="date-tag"><a href="https://tiboryeah.github.io/kokoro-3-souls/index.html" target="_blank" style="color: var(--cyan); text-decoration: underline;">Ver desarrollo</a></span>
             </div>
-            <div class="proj-desc">Videojuego interactivo en desarrollo con Python/Ren'Py, combinando narrativa estructurada y control de estado.</div>
-            <div class="tags"><span>Python</span><span>Ren'Py</span><span>Game Design</span><span>Scripting</span></div>
+            <div class="proj-desc">Videojuego narrativo en desarrollo con Python/Ren'Py y control de estado.</div>
           </div>
 
           <div class="item-block">
@@ -474,8 +484,7 @@
               <h3>Discord Server Admin Bot</h3>
               <span class="date-tag">Google Cloud</span>
             </div>
-            <div class="proj-desc">Bot desplegado en GCP para automatizar tareas administrativas, comandos y control operativo.</div>
-            <div class="tags"><span>Python</span><span>Google Cloud</span><span>APIs</span><span>Automation</span></div>
+            <div class="proj-desc">Bot en Python desplegado en GCP para automatizar tareas administrativas.</div>
           </div>
         </section>
 
@@ -488,7 +497,7 @@
         <section>
           <div class="seclabel">Perfil profesional</div>
           <div class="profile-card">
-            Construyo aplicaciones web, APIs, automatizaciones y sistemas internos con una base técnica seria: React, Node.js, Python, bases de datos y cloud. Mi enfoque combina <em>desarrollo, criterio de producto y documentación clara</em> para entregar soluciones funcionales y fáciles de mantener.
+            Desarrollador Full Stack con experiencia llevando <em>IA a producción</em>: Next.js, React, TypeScript, Node.js, PostgreSQL, OpenAI y voz. Combino desarrollo, criterio de producto y documentación clara para entregar software mantenible con costos y seguridad bajo control.
           </div>
         </section>
 
@@ -516,14 +525,28 @@
           <div class="skills-tech">
             <h4>Lenguajes y Frameworks</h4>
             <div class="chips">
-              <span>JavaScript</span><span>React</span><span>Node.js</span><span>Python</span><span>C#</span><span>.NET</span><span>FastAPI</span><span>C/C++</span>
+              <span>TypeScript</span><span>JavaScript</span><span>React</span><span>Next.js</span><span>Tailwind</span><span>Node.js</span><span>Express</span><span>Python</span><span>FastAPI</span><span>C#</span><span>.NET</span><span>C/C++</span>
+            </div>
+          </div>
+
+          <div class="skills-tech">
+            <h4>IA aplicada</h4>
+            <div class="chips">
+              <span>OpenAI API</span><span>Embeddings</span><span>pgvector</span><span>JSON Schema</span><span>Vapi</span>
             </div>
           </div>
 
           <div class="skills-tech">
             <h4>Cloud & Datos</h4>
             <div class="chips">
-              <span>Google Cloud</span><span>Docker</span><span>MongoDB</span><span>PostgreSQL</span><span>SQL</span><span>Git/GitHub</span>
+              <span>Supabase</span><span>PostgreSQL</span><span>RLS</span><span>pg_trgm</span><span>MongoDB</span><span>SQL</span><span>Vercel</span><span>Google Cloud</span><span>Docker</span><span>Git/GitHub</span><span>Oracle (análisis de migración)</span>
+            </div>
+          </div>
+
+          <div class="skills-tech">
+            <h4>Calidad y pruebas</h4>
+            <div class="chips">
+              <span>Vitest</span><span>Playwright</span><span>Postman</span><span>Zod</span><span>ESLint</span>
             </div>
           </div>
         </section>

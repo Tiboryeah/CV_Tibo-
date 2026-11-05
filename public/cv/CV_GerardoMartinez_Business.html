@@ -118,7 +118,7 @@
       background: var(--bg2);
       display: flex;
       flex-direction: column;
-      gap: 18px;
+      gap: 15px;
     }
 
     /* ─── SECTION LABELS ─── */
@@ -383,7 +383,7 @@
     <header>
       <div class="hd-left">
         <h1>Gerardo Esteban<br>Martínez López</h1>
-        <div class="role-tag">Full Stack Developer</div>
+        <div class="role-tag">Full Stack Developer · IA aplicada</div>
       </div>
       <div class="hd-right">
         <div>tiboryeahrock@gmail.com</div>
@@ -407,13 +407,12 @@
           <div class="job">
             <div class="job-hd">
               <h3>Desarrollador Full Stack</h3>
-              <span class="period">Actualidad</span>
+              <span class="period">May 2026 — Actualidad</span>
             </div>
             <div class="job-org">FabricSoft</div>
             <ul>
-              <li>Desarrollo de aplicaciones web completas (frontend y backend) para los productos y clientes de FabricSoft.</li>
-              <li>Implementación de funcionalidades con React, Node.js y bases de datos en un entorno profesional de equipo.</li>
-              <li>Participación en ciclos de desarrollo ágil, code reviews y entrega continua de software de calidad.</li>
+              <li>Desarrollo full stack de aplicaciones web con IA en producción: Next.js, React, TypeScript, Node.js/Express, Supabase y OpenAI.</li>
+              <li>Trabajo con pull requests, staging y producción, migraciones versionadas y pruebas con Vitest, Playwright y Postman.</li>
             </ul>
           </div>
 
@@ -424,9 +423,7 @@
             </div>
             <div class="job-org">Proyectos bajo demanda / Freelance</div>
             <ul>
-              <li>Desarrollo de aplicaciones web, APIs y sistemas internos con React, Node.js y Python.</li>
-              <li>Construcción de interfaces, lógica backend, manejo de datos y automatizaciones con criterio de producto.</li>
-              <li>Proyectos externos seleccionados para páginas web, sistemas a medida e integraciones.</li>
+              <li>Aplicaciones web, APIs, sistemas internos y automatizaciones con React, Node.js y Python.</li>
             </ul>
           </div>
 
@@ -437,8 +434,7 @@
             </div>
             <div class="job-org">ESCOM — IPN</div>
             <ul>
-              <li>Diagnóstico de fallas, reemplazo de componentes y optimización del rendimiento de equipos.</li>
-              <li>Atención a usuarios, seguimiento de incidencias y aplicación de criterios técnicos documentales.</li>
+              <li>Diagnóstico de fallas, optimización de equipos y seguimiento de incidencias con usuarios.</li>
             </ul>
           </div>
         </section>
@@ -447,12 +443,31 @@
         <section>
           <div class="sec-label">Proyectos Destacados</div>
 
+          <div class="job">
+            <div class="job-hd">
+              <h3>Reclútame</h3>
+              <a class="period" href="https://www.reclutame.ai/">reclutame.ai</a>
+            </div>
+            <div class="job-org">Reclutamiento con IA en producción · Full Stack · Equipo de 2</div>
+            <ul>
+              <li>Módulos de vacantes, compatibilidad, preentrevistas y entrevistas por voz con IA.</li>
+              <li>Compatibilidad con embeddings y pgvector; salidas de OpenAI validadas con esquemas Zod y JSON Schema.</li>
+              <li>Reglas de plan en backend y frontend: 9 rutas protegidas, topes de uso y flujo de contratación completo sin IA.</li>
+              <li>Control de gasto de IA: análisis automático solo para un top diario por vacante y el resto bajo demanda.</li>
+              <li>Sesiones con cierre en todos los dispositivos y límites de inactividad y duración por rol.</li>
+              <li>Rendimiento: CLS móvil de 0.141 a 0, JS inicial de cada panel a menos de la mitad y búsqueda con pg_trgm.</li>
+            </ul>
+            <div class="proj-tags" style="margin-top: 5px;">
+              <span>Next.js</span><span>TypeScript</span><span>Express</span><span>Supabase</span><span>pgvector</span><span>OpenAI</span><span>Vapi</span>
+            </div>
+          </div>
+
           <div class="proj">
             <div class="proj-hd">
               <h3>Kuxipilli (TT 2026)</h3>
               <a href="https://kuxipilli.com">kuxipilli.com</a>
             </div>
-            <div class="proj-desc">Plataforma preventiva orientada a madres y padres de familia, enfocada en seguridad digital. Demuestra criterio de producto, frontend, documentación formal e ISO/IEEE SRS.</div>
+            <div class="proj-desc">Plataforma preventiva para madres y padres de familia, enfocada en seguridad digital.</div>
             <div class="proj-tags">
               <span>React</span><span>MERN Stack</span><span>UX/UI</span><span>ISO/IEEE SRS</span>
             </div>
@@ -463,21 +478,12 @@
               <h3>Discord Server Admin Bot</h3>
               <span style="font-size:10px; color:var(--ink-soft)">Google Cloud</span>
             </div>
-            <div class="proj-desc">Bot desplegado en GCP para automatizar tareas administrativas, comandos y control operativo del servidor. Demuestra despliegue real, automatización y mantenimiento de servicios.</div>
+            <div class="proj-desc">Bot desplegado en GCP para automatizar tareas administrativas y control operativo del servidor.</div>
             <div class="proj-tags">
               <span>Python</span><span>Google Cloud</span><span>APIs</span><span>Automatización</span>
             </div>
           </div>
 
-          <div class="proj">
-            <div class="proj-hd">
-              <h3>Sistemas Cliente-Servidor con Sockets</h3>
-            </div>
-            <div class="proj-desc">Implementaciones con TCP/UDP para reforzar fundamentos de comunicación en red y lógica distribuida. Demuestra bases sólidas en networking y resolución técnica.</div>
-            <div class="proj-tags">
-              <span>Python</span><span>C</span><span>TCP/UDP</span><span>Networking</span>
-            </div>
-          </div>
         </section>
 
       </div>
@@ -489,7 +495,7 @@
         <section>
           <div class="sec-label">Perfil</div>
           <p class="profile-text">
-            Desarrollador de software con enfoque en aplicaciones web, APIs y sistemas internos. Trabajo con React, Node.js, Python, bases de datos y cloud. Combino desarrollo, criterio de producto y documentación clara para entregar soluciones funcionales y fáciles de mantener.
+            Desarrollador Full Stack con experiencia llevando IA a producción: Next.js, React, TypeScript, Node.js, PostgreSQL, OpenAI y voz. Combino desarrollo, criterio de producto y documentación clara para entregar software mantenible con costos y seguridad bajo control.
           </p>
         </section>
 
@@ -497,38 +503,29 @@
         <section>
           <div class="sec-label">Habilidades</div>
 
-          <div class="sk">
-            <div class="sk-row"><span>JavaScript / TypeScript</span><span>Avanzado</span></div>
-            <div class="sk-track"><div class="sk-fill" style="width:90%"></div></div>
-          </div>
-          <div class="sk">
-            <div class="sk-row"><span>Frontend · React</span><span>Avanzado</span></div>
-            <div class="sk-track"><div class="sk-fill" style="width:88%"></div></div>
-          </div>
-          <div class="sk">
-            <div class="sk-row"><span>Backend · Node.js</span><span>Avanzado</span></div>
-            <div class="sk-track"><div class="sk-fill" style="width:85%"></div></div>
-          </div>
-          <div class="sk">
-            <div class="sk-row"><span>Bases de datos SQL/NoSQL</span><span>Intermedio</span></div>
-            <div class="sk-track"><div class="sk-fill" style="width:80%"></div></div>
-          </div>
-          <div class="sk">
-            <div class="sk-row"><span>Cloud · Docker · DevOps</span><span>Intermedio</span></div>
-            <div class="sk-track"><div class="sk-fill" style="width:70%"></div></div>
-          </div>
-
-          <div style="margin-top: 12px;">
+          <div>
             <div class="chips-block">
               <h4>Lenguajes y Frameworks</h4>
               <div class="chips">
-                <span>JavaScript</span><span>React</span><span>Node.js</span><span>Python</span><span>C#</span><span>.NET</span><span>FastAPI</span><span>C/C++</span>
+                <span>TypeScript</span><span>JavaScript</span><span>React</span><span>Next.js</span><span>Tailwind</span><span>Node.js</span><span>Express</span><span>Python</span><span>FastAPI</span><span>C#</span><span>.NET</span><span>C/C++</span>
+              </div>
+            </div>
+            <div class="chips-block" style="margin-top:8px;">
+              <h4>IA aplicada</h4>
+              <div class="chips">
+                <span>OpenAI API</span><span>Embeddings</span><span>pgvector</span><span>JSON Schema</span><span>Vapi</span>
               </div>
             </div>
             <div class="chips-block" style="margin-top:8px;">
               <h4>Cloud y Datos</h4>
               <div class="chips">
-                <span>Google Cloud</span><span>Docker</span><span>MongoDB</span><span>PostgreSQL</span><span>SQL</span><span>Git/GitHub</span>
+                <span>Supabase</span><span>PostgreSQL</span><span>RLS</span><span>pg_trgm</span><span>MongoDB</span><span>SQL</span><span>Vercel</span><span>Google Cloud</span><span>Docker</span><span>Git/GitHub</span><span>Oracle (análisis de migración)</span>
+              </div>
+            </div>
+            <div class="chips-block" style="margin-top:8px;">
+              <h4>Calidad y pruebas</h4>
+              <div class="chips">
+                <span>Vitest</span><span>Playwright</span><span>Postman</span><span>Zod</span><span>ESLint</span>
               </div>
             </div>
           </div>

@@ -70,7 +70,13 @@ const SUGGEST = ['about', 'skills', 'projects', 'services', 'contact', 'help'];
 const content = {
   es: {
     meta: {
-      tagline: 'Full Stack Developer · México',
+      tagline: 'Full Stack Developer · IA aplicada · México',
+      role: 'Full Stack Developer · IA aplicada',
+      roleShort: 'FULL_STACK + IA',
+      roleTags: ['Web', 'IA aplicada', 'Sistemas a medida', 'APIs', 'Automatizaciones'],
+      skillDatabases: 'Bases de datos · SQL / NoSQL',
+      skillAutomation: 'Automatización & integraciones',
+      phoneLabel: 'Teléfono',
       available: 'Disponible · contratando',
       systemStatus: 'system_status',
       langToggleLabel: 'Switch to English',
@@ -92,13 +98,13 @@ const content = {
       titleAccent: 'web, sistemas bajo demanda e integraciones inteligentes',
       subtitle: 'Gerardo Esteban Martínez López',
       description:
-        'Construyo aplicaciones web, APIs, automatizaciones y sistemas internos con una base técnica seria: React, Node.js, Python, bases de datos, cloud y documentación clara. Si necesitas una página web o un sistema a medida, puedo ayudarte a convertir la idea en una solución funcional.',
+        'Construyo aplicaciones web, APIs e integraciones de IA en producción con Next.js, React, TypeScript, Node.js, PostgreSQL, OpenAI y voz. Si necesitas una página web o un sistema a medida, puedo ayudarte a convertir la idea en una solución funcional.',
       primary: 'Ver soluciones',
       secondary: 'Cotizar proyecto',
       download: 'Descargar CV',
       quickFacts: [
         'Webs profesionales, dashboards y sistemas internos',
-        'APIs, automatizaciones y flujos con enfoque AI-ready',
+        'APIs, automatizaciones e IA aplicada en producción',
         'Agenda limitada para proyectos bajo demanda',
       ],
     },
@@ -115,7 +121,7 @@ const content = {
         },
         {
           title: 'Criterio técnico moderno',
-          text: 'Combino desarrollo web, cloud, APIs y fundamentos de redes con una visión AI-ready para integrar automatización cuando el proyecto lo justifica.',
+          text: 'Combino desarrollo web, cloud, APIs y fundamentos de redes con experiencia llevando IA a producción, con costos y reglas bajo control.',
           icon: Server,
         },
         {
@@ -128,7 +134,7 @@ const content = {
     highlights: {
       title: 'Resumen ejecutivo',
       items: [
-        { label: 'Perfil objetivo', value: 'Desarrollador de software / Web / Sistemas a medida' },
+        { label: 'Perfil objetivo', value: 'Desarrollador Full Stack / IA aplicada / Sistemas a medida' },
         { label: 'Ubicación', value: 'Ciudad de México, México' },
         { label: 'Idiomas', value: 'Español nativo, inglés técnico-profesional' },
         { label: 'Fortalezas', value: 'Producto, automatización, documentación y resolución' },
@@ -168,17 +174,27 @@ const content = {
         {
           title: 'Lenguajes y frameworks',
           icon: Code2,
-          items: ['JavaScript', 'React', 'Node.js', 'Python', 'C', 'C++', 'C#', '.NET', 'FastAPI'],
+          items: ['TypeScript', 'JavaScript', 'React', 'Next.js', 'Tailwind CSS', 'Node.js', 'Express', 'Python', 'FastAPI', 'C', 'C++', 'C#', '.NET'],
+        },
+        {
+          title: 'IA aplicada',
+          icon: Cpu,
+          items: ['OpenAI API', 'Embeddings', 'pgvector', 'JSON Schema', 'Vapi'],
         },
         {
           title: 'Datos y backend',
           icon: Database,
-          items: ['MongoDB', 'PostgreSQL', 'SQL', 'MERN Stack', 'Diseño de APIs', 'Sockets TCP/UDP'],
+          items: ['Supabase', 'PostgreSQL', 'Row Level Security', 'pg_trgm', 'MongoDB', 'SQL', 'MERN Stack', 'Diseño de APIs', 'Sockets TCP/UDP'],
         },
         {
           title: 'Cloud, tooling y trabajo técnico',
           icon: Globe,
-          items: ['Google Cloud', 'Compute Engine', 'BigQuery', 'Docker', 'Git', 'GitHub', 'UML', 'ISO/IEEE SRS'],
+          items: ['Vercel', 'Google Cloud', 'Compute Engine', 'BigQuery', 'Docker', 'Git', 'GitHub', 'UML', 'ISO/IEEE SRS', 'Oracle (análisis de migración)'],
+        },
+        {
+          title: 'Calidad y pruebas',
+          icon: ShieldCheck,
+          items: ['Vitest', 'Playwright', 'Postman', 'Zod', 'ESLint'],
         },
       ],
     },
@@ -189,11 +205,10 @@ const content = {
         {
           role: 'Desarrollador Full Stack',
           place: 'FabricSoft',
-          period: 'Actualidad',
+          period: 'Mayo 2026 - Actualidad',
           bullets: [
-            'Desarrollo de aplicaciones web completas (frontend y backend) para los productos y clientes de FabricSoft.',
-            'Implementación de funcionalidades con React, Node.js y bases de datos en un entorno profesional de equipo.',
-            'Participación en ciclos de desarrollo ágil, code reviews y entrega continua de software de calidad.',
+            'Desarrollo full stack de aplicaciones web con IA en producción: Next.js, React, TypeScript, Node.js/Express, Supabase y OpenAI.',
+            'Trabajo con pull requests, staging y producción, migraciones versionadas y pruebas con Vitest, Playwright y Postman.',
           ],
         },
         {
@@ -223,6 +238,13 @@ const content = {
       title: 'Proyectos que demuestran criterio técnico',
       items: [
         {
+          title: 'Reclútame',
+          url: 'https://www.reclutame.ai/',
+          summary: 'Plataforma de reclutamiento con IA en producción. Como desarrollador full stack en un equipo de 2, trabajé en vacantes, compatibilidad con embeddings y pgvector, preentrevistas y entrevistas por voz.',
+          impact: 'Reglas de plan en backend y frontend, control de gasto de IA con análisis diario y bajo demanda, sesiones con límites por rol y CLS móvil de 0.141 a 0.',
+          stack: ['Next.js', 'TypeScript', 'Express', 'Supabase', 'pgvector', 'OpenAI', 'Vapi'],
+        },
+        {
           title: 'Kuxipilli (TT 2026)',
           url: 'https://kuxipilli.com/',
           summary: 'Plataforma preventiva orientada a madres y padres de familia, enfocada en seguridad digital y experiencia de uso clara.',
@@ -233,7 +255,7 @@ const content = {
           title: 'Discord Server Admin Bot',
           summary: 'Bot desplegado en Google Cloud para automatizar tareas administrativas, comandos y control operativo del servidor.',
           impact: 'Demuestra despliegue real, automatización, APIs y mantenimiento de servicios.',
-          stack: ['Python', 'Google Cloud', 'APIs', 'Automation'],
+          stack: ['Python', 'Google Cloud', 'APIs', 'Automatización'],
         },
         {
           title: 'Sistemas cliente-servidor con sockets',
@@ -283,6 +305,8 @@ const content = {
     contact: {
       eyebrow: 'CONTACTO',
       title: 'Hablemos antes de que se cierre la agenda',
+      headingLead: '¿Tienes un',
+      headingAccent: 'proyecto en mente?',
       description:
         'Estoy trabajando actualmente, pero abro espacios limitados para proyectos web y sistemas bajo demanda. Si tienes una idea clara o un problema operativo que quieres resolver, contáctame y revisamos alcance, tiempos y viabilidad.',
       location: 'Ciudad de México, México',
@@ -291,7 +315,13 @@ const content = {
   },
   en: {
     meta: {
-      tagline: 'Full Stack Developer · Mexico',
+      tagline: 'Full Stack Developer · Applied AI · Mexico',
+      role: 'Full Stack Developer · Applied AI',
+      roleShort: 'FULL_STACK + AI',
+      roleTags: ['Web', 'Applied AI', 'Custom systems', 'APIs', 'Automations'],
+      skillDatabases: 'Databases · SQL / NoSQL',
+      skillAutomation: 'Automation & integrations',
+      phoneLabel: 'Phone',
       available: 'Available · hiring',
       systemStatus: 'system_status',
       langToggleLabel: 'Cambiar a Español',
@@ -313,13 +343,13 @@ const content = {
       titleAccent: 'web, custom systems, and intelligent integrations',
       subtitle: 'Gerardo Esteban Martínez López',
       description:
-        'I build web apps, APIs, automations, and internal systems with a serious technical base: React, Node.js, Python, databases, cloud, and clear documentation. If you need a website or a custom system, I can help turn the idea into a functional solution.',
+        'I build web apps, APIs, and AI integrations in production with Next.js, React, TypeScript, Node.js, PostgreSQL, OpenAI, and voice. If you need a website or a custom system, I can help turn the idea into a functional solution.',
       primary: 'View solutions',
       secondary: 'Quote a project',
       download: 'Download CV',
       quickFacts: [
         'Professional websites, dashboards, and internal tools',
-        'APIs, automations, and AI-ready workflows',
+        'APIs, automations, and applied AI in production',
         'Limited availability for custom projects',
       ],
     },
@@ -336,7 +366,7 @@ const content = {
         },
         {
           title: 'Modern technical judgment',
-          text: 'I combine web development, cloud, APIs, and networking fundamentals with an AI-ready mindset when automation can create real value.',
+          text: 'I combine web development, cloud, APIs, and networking fundamentals with experience taking AI to production while keeping costs and rules under control.',
           icon: Server,
         },
         {
@@ -349,7 +379,7 @@ const content = {
     highlights: {
       title: 'Executive summary',
       items: [
-        { label: 'Target role', value: 'Software developer / Web / Custom systems' },
+        { label: 'Target role', value: 'Full Stack Developer / Applied AI / Custom systems' },
         { label: 'Location', value: 'Mexico City, Mexico' },
         { label: 'Languages', value: 'Native Spanish, professional technical English' },
         { label: 'Strengths', value: 'Product thinking, automation, documentation, problem solving' },
@@ -389,17 +419,27 @@ const content = {
         {
           title: 'Languages and frameworks',
           icon: Code2,
-          items: ['JavaScript', 'React', 'Node.js', 'Python', 'C', 'C++', 'C#', '.NET', 'FastAPI'],
+          items: ['TypeScript', 'JavaScript', 'React', 'Next.js', 'Tailwind CSS', 'Node.js', 'Express', 'Python', 'FastAPI', 'C', 'C++', 'C#', '.NET'],
+        },
+        {
+          title: 'Applied AI',
+          icon: Cpu,
+          items: ['OpenAI API', 'Embeddings', 'pgvector', 'JSON Schema', 'Vapi'],
         },
         {
           title: 'Data and backend',
           icon: Database,
-          items: ['MongoDB', 'PostgreSQL', 'SQL', 'MERN Stack', 'API design', 'TCP/UDP sockets'],
+          items: ['Supabase', 'PostgreSQL', 'Row Level Security', 'pg_trgm', 'MongoDB', 'SQL', 'MERN Stack', 'API design', 'TCP/UDP sockets'],
         },
         {
           title: 'Cloud, tooling, and engineering work',
           icon: Globe,
-          items: ['Google Cloud', 'Compute Engine', 'BigQuery', 'Docker', 'Git', 'GitHub', 'UML', 'ISO/IEEE SRS'],
+          items: ['Vercel', 'Google Cloud', 'Compute Engine', 'BigQuery', 'Docker', 'Git', 'GitHub', 'UML', 'ISO/IEEE SRS', 'Oracle (migration analysis)'],
+        },
+        {
+          title: 'Quality and testing',
+          icon: ShieldCheck,
+          items: ['Vitest', 'Playwright', 'Postman', 'Zod', 'ESLint'],
         },
       ],
     },
@@ -410,11 +450,10 @@ const content = {
         {
           role: 'Full Stack Developer',
           place: 'FabricSoft',
-          period: 'Present',
+          period: 'May 2026 - Present',
           bullets: [
-            'Building end-to-end web applications (frontend and backend) for FabricSoft\'s products and clients.',
-            'Implementing features with React, Node.js, and databases in a professional team environment.',
-            'Participating in agile development cycles, code reviews, and continuous delivery of quality software.',
+            'Full stack development of AI-powered web applications in production: Next.js, React, TypeScript, Node.js/Express, Supabase, and OpenAI.',
+            'Working with pull requests, staging and production, versioned migrations, and tests with Vitest, Playwright, and Postman.',
           ],
         },
         {
@@ -443,6 +482,13 @@ const content = {
       eyebrow: 'PROJECTS',
       title: 'Projects that demonstrate technical judgment',
       items: [
+        {
+          title: 'Reclútame',
+          url: 'https://www.reclutame.ai/',
+          summary: 'AI recruiting platform in production. As a full stack developer on a team of 2, I worked on job postings, matching with embeddings and pgvector, pre-screening, and voice interviews.',
+          impact: 'Plan rules across backend and frontend, AI spend control with daily and on-demand analysis, role-based session limits, and mobile CLS reduced from 0.141 to 0.',
+          stack: ['Next.js', 'TypeScript', 'Express', 'Supabase', 'pgvector', 'OpenAI', 'Vapi'],
+        },
         {
           title: 'Kuxipilli (TT 2026)',
           url: 'https://kuxipilli.com/',
@@ -503,6 +549,8 @@ const content = {
     },
     contact: {
       eyebrow: 'CONTACT',
+      headingLead: 'Have a project',
+      headingAccent: 'in mind?',
       title: 'Let us talk before the calendar fills up',
       description:
         'I am currently working, but I open limited slots for web projects and custom systems. If you have a clear idea or an operational problem to solve, contact me and we can review scope, timing, and feasibility.',
@@ -805,7 +853,7 @@ const TerminalCLI = ({ lang, t }) => {
             <div className="hd"><span className="ix">01</span>{labelAbout}</div>
             <div className="line">
               <span className="vb" style={{ fontSize: '15px' }}>{t.hero.subtitle}</span>  
-              <span className="dim"> // {lang === 'es' ? 'Desarrollador de Software' : 'Software Developer'}</span>
+              <span className="dim"> // {t.meta.role}</span>
             </div>
             <div className="line mut" style={{ marginTop: '8px', maxWidth: '72ch' }}>
               {t.hero.description}
@@ -856,8 +904,8 @@ const TerminalCLI = ({ lang, t }) => {
           { n: 'JavaScript / TypeScript', p: 90 },
           { n: 'Frontend · React · CSS', p: 88 },
           { n: 'Backend & APIs · Node.js', p: 85 },
-          { n: 'Bases de datos · SQL / NoSQL', p: 80 },
-          { n: 'Automatización & integraciones', p: 82 }
+          { n: t.meta.skillDatabases, p: 80 },
+          { n: t.meta.skillAutomation, p: 82 }
         ];
         return (
           <div className="block">
@@ -954,7 +1002,7 @@ const TerminalCLI = ({ lang, t }) => {
               <div className="c"><span className="v">@</span><div><div className="l">Email</div><div className="val">tiboryeahrock@gmail.com</div></div></div>
               <div className="c"><span className="v">⌥</span><div><div className="l">GitHub</div><div className="val">github.com/Tiboryeah</div></div></div>
               <div className="c"><span className="v">in</span><div><div className="l">LinkedIn</div><div className="val">gerardo-esteban-martinez-lopez</div></div></div>
-              <div className="c"><span className="v">✆</span><div><div className="l">Phone</div><div className="val">+52 56 4000 6312</div></div></div>
+              <div className="c"><span className="v">✆</span><div><div className="l">{t.meta.phoneLabel}</div><div className="val">+52 56 4000 6312</div></div></div>
             </div>
             <div className="line" style={{ marginTop: '12px' }}>
               <span className="mag">❯</span> <span className="vb">{lang === 'es' ? '¿Tienes un proyecto?' : 'Have a project?'}</span>{' '}
@@ -1035,7 +1083,7 @@ const TerminalCLI = ({ lang, t }) => {
             return (
               <div key={i}>
                 <pre className="ascii" style={{ fontSize: 'clamp(5px, 0.8vw, 8px)', overflowX: 'hidden' }}>{ASCII_ART}</pre>
-                <div className="line" style={{ marginTop: '8px' }}><span className="vb">{t.hero.subtitle}</span> <span className="dim">— Full Stack Developer</span></div>
+                <div className="line" style={{ marginTop: '8px' }}><span className="vb">{t.hero.subtitle}</span> <span className="dim">— {t.meta.role}</span></div>
                 <div className="line muted" style={{ marginBottom: '12px' }}>Terminal CV · v1.0 · {lang === 'es' ? 'escribe help o click en chips' : 'type help or click on suggestion chips'}</div>
               </div>
             );
@@ -1161,7 +1209,7 @@ function App() {
     },
     {
       icon: Phone,
-      label: lang === 'es' ? 'Teléfono' : 'Phone',
+      label: t.meta.phoneLabel,
       value: '+52 56 4000 6312',
       href: 'tel:+525640006312',
       k: '✆'
@@ -1194,7 +1242,7 @@ function App() {
             <div className="avatar"><div className="ring"></div><div className="in">GM</div></div>
             <div className="col">
               <div className="nm">Gerardo Martínez</div>
-              <div className="rl">FULL_STACK_DEV</div>
+              <div className="rl">{t.meta.roleShort}</div>
             </div>
           </div>
           <div className="statusbox">
@@ -1230,7 +1278,7 @@ function App() {
               <div className="kick">{t.meta.tagline}</div>
               <h1 className="rv in d1">Gerardo<br /><span className="l2">Martínez López</span></h1>
               <div className="role rv in d2">
-                <span>Web</span><span>Sistemas a medida</span><span>APIs</span><span>Automatizaciones</span>
+                {t.meta.roleTags.map(tag => <span key={tag}>{tag}</span>)}
               </div>
               <p className="lead rv in d2">{t.hero.description}</p>
               <div className="cta rv in d3">
@@ -1358,8 +1406,8 @@ function App() {
                 <div className="skbar"><div className="r"><span className="n">JavaScript / TypeScript</span><span className="p">90%</span></div><div className="track"><i data-pct="90"></i></div></div>
                 <div className="skbar"><div className="r"><span className="n">Frontend · React · CSS</span><span className="p">88%</span></div><div className="track"><i data-pct="88"></i></div></div>
                 <div className="skbar"><div className="r"><span className="n">Backend & APIs · Node.js</span><span className="p">85%</span></div><div className="track"><i data-pct="85"></i></div></div>
-                <div className="skbar"><div className="r"><span className="n">Bases de datos · SQL / NoSQL</span><span className="p">80%</span></div><div className="track"><i data-pct="80"></i></div></div>
-                <div className="skbar"><div className="r"><span className="n">Automatización & integraciones</span><span className="p">82%</span></div><div className="track"><i data-pct="82"></i></div></div>
+                <div className="skbar"><div className="r"><span className="n">{t.meta.skillDatabases}</span><span className="p">80%</span></div><div className="track"><i data-pct="80"></i></div></div>
+                <div className="skbar"><div className="r"><span className="n">{t.meta.skillAutomation}</span><span className="p">82%</span></div><div className="track"><i data-pct="82"></i></div></div>
               </div>
               <div className="stack rv d1">
                 {t.stack.groups.map((group, idx) => (
@@ -1449,7 +1497,7 @@ function App() {
           {/* CONTACT */}
           <section id="contact" className="contact">
             <div className="seclabel rv" style={{ justifyContent: 'center' }}><span className="no">08</span> {t.nav.contact}</div>
-            <div className="big rv">¿Tienes un<br /><span className="grad">proyecto en mente?</span></div>
+            <div className="big rv">{t.contact.headingLead}<br /><span className="grad">{t.contact.headingAccent}</span></div>
             <p className="sub rv d1">{t.contact.description}</p>
             <div className="clinks rv d2">
               {contactLinks.map((item, idx) => (
@@ -1462,7 +1510,7 @@ function App() {
                 </a>
               ))}
             </div>
-            <footer>Gerardo Esteban Martínez López · Full Stack Developer · 2026</footer>
+            <footer>Gerardo Esteban Martínez López · {t.meta.role} · 2026</footer>
           </section>
         </main>
       </div>
