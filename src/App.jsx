@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import {
   ArrowRight,
-  Award,
   Briefcase,
   CheckCircle2,
   Code2,
@@ -241,33 +240,33 @@ const content = {
           title: 'Reclútame',
           url: 'https://www.reclutame.ai/',
           summary: 'Plataforma de reclutamiento con IA en producción. Como desarrollador full stack en un equipo de 2, trabajé en vacantes, compatibilidad con embeddings y pgvector, preentrevistas y entrevistas por voz.',
-          impact: 'Reglas de plan en backend y frontend, control de gasto de IA con análisis diario y bajo demanda, sesiones con límites por rol y CLS móvil de 0.141 a 0.',
+          impact: 'IA en producción con el gasto bajo control: analiza en automático solo a los mejores candidatos de cada vacante, y el proceso de contratación también funciona sin IA.',
           stack: ['Next.js', 'TypeScript', 'Express', 'Supabase', 'pgvector', 'OpenAI', 'Vapi'],
         },
         {
           title: 'Kuxipilli (TT 2026)',
           url: 'https://kuxipilli.com/',
           summary: 'Plataforma preventiva orientada a madres y padres de familia, enfocada en seguridad digital y experiencia de uso clara.',
-          impact: 'Muestra capacidad para trabajar producto, frontend, documentación formal y privacidad.',
+          impact: 'Del requerimiento al producto: especificación formal ISO/IEEE y una interfaz clara, cuidando la privacidad de las familias.',
           stack: ['React', 'MERN', 'UX/UI', 'ISO/IEEE SRS'],
         },
         {
           title: 'Discord Server Admin Bot',
           summary: 'Bot desplegado en Google Cloud para automatizar tareas administrativas, comandos y control operativo del servidor.',
-          impact: 'Demuestra despliegue real, automatización, APIs y mantenimiento de servicios.',
+          impact: 'Un servicio real en la nube: desplegado, automatizado y con mantenimiento continuo.',
           stack: ['Python', 'Google Cloud', 'APIs', 'Automatización'],
         },
         {
           title: 'Sistemas cliente-servidor con sockets',
           summary: 'Implementaciones con TCP/UDP para reforzar fundamentos de comunicación en red y lógica distribuida.',
-          impact: 'Refuerza bases sólidas en networking, backend y resolución técnica.',
+          impact: 'Fundamentos de redes en la práctica: comunicación cliente-servidor programada directamente sobre sockets.',
           stack: ['Python', 'C', 'TCP', 'UDP'],
         },
         {
           title: 'Kokoro Souls',
           url: 'https://tiboryeah.github.io/kokoro-3-souls/index.html',
           summary: 'Videojuego interactivo en desarrollo, combinando narrativa, lógica de juego estructurada y una experiencia inmersiva.',
-          impact: 'Demuestra habilidades en desarrollo de lógica de juego, scripting de historia y control de estado complejo.',
+          impact: 'Narrativa y lógica de juego conectadas, con control de estado complejo.',
           stack: ['Python', 'Ren\'Py', 'Game Design', 'Scripting'],
         },
       ],
@@ -486,33 +485,33 @@ const content = {
           title: 'Reclútame',
           url: 'https://www.reclutame.ai/',
           summary: 'AI recruiting platform in production. As a full stack developer on a team of 2, I worked on job postings, matching with embeddings and pgvector, pre-screening, and voice interviews.',
-          impact: 'Plan rules across backend and frontend, AI spend control with daily and on-demand analysis, role-based session limits, and mobile CLS reduced from 0.141 to 0.',
+          impact: 'AI in production with spend under control: it automatically analyzes only the top candidates for each job, and the hiring process also works without AI.',
           stack: ['Next.js', 'TypeScript', 'Express', 'Supabase', 'pgvector', 'OpenAI', 'Vapi'],
         },
         {
           title: 'Kuxipilli (TT 2026)',
           url: 'https://kuxipilli.com/',
           summary: 'Preventive web platform for families focused on digital safety and a clear user experience.',
-          impact: 'Shows product thinking, frontend execution, formal documentation, and privacy awareness.',
+          impact: 'From requirements to product: formal ISO/IEEE specification and a clear interface that protects family privacy.',
           stack: ['React', 'MERN', 'UX/UI', 'ISO/IEEE SRS'],
         },
         {
           title: 'Discord Server Admin Bot',
           summary: 'A Google Cloud deployed bot used to automate admin tasks, commands, and server operations.',
-          impact: 'Demonstrates real deployment, automation, APIs, and service maintenance.',
+          impact: 'A real cloud service: deployed, automated, and continuously maintained.',
           stack: ['Python', 'Google Cloud', 'APIs', 'Automation'],
         },
         {
           title: 'Client-server socket systems',
           summary: 'TCP/UDP implementations built to strengthen networking and distributed-logic fundamentals.',
-          impact: 'Reinforces solid networking, backend, and technical problem-solving skills.',
+          impact: 'Networking fundamentals in practice: client-server communication programmed directly on sockets.',
           stack: ['Python', 'C', 'TCP', 'UDP'],
         },
         {
           title: 'Kokoro Souls',
           url: 'https://tiboryeah.github.io/kokoro-3-souls/index.html',
           summary: 'Interactive video game currently under development, combining storytelling, structured game logic, and immersive gameplay.',
-          impact: 'Demonstrates game logic design, narrative scripting, and complex state management.',
+          impact: 'Connected narrative and game logic, with complex state management.',
           stack: ['Python', 'Ren\'Py', 'Game Design', 'Scripting'],
         },
       ],
@@ -1444,9 +1443,9 @@ function App() {
                       )}
                     </h3>
                     <p>{proj.summary}</p>
-                    <div style={{ padding: '8px 12px', background: 'rgba(168,85,247,0.06)', borderRadius: '8px', border: '1px solid var(--line)', fontSize: '12.5px', display: 'flex', gap: '8px', color: 'var(--txt)', marginBottom: '14px', textAlign: 'left' }}>
-                      <Award size={15} style={{ flexShrink: 0, marginTop: '2px', color: 'var(--violet-soft)' }} />
-                      <span>{proj.impact}</span>
+                    <div className="pimpact">
+                      <span className="lbl">{lang === 'es' ? 'Impacto' : 'Impact'}</span>
+                      <p>{proj.impact}</p>
                     </div>
                     <div className="tg">
                       {proj.stack.map(s => <span key={s}>{s}</span>)}
