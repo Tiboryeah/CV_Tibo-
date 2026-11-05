@@ -32,7 +32,6 @@
 
     body {
       width: 8.5in;
-      height: 11in;
       background: var(--bg);
       color: var(--ink-mid);
       font-family: 'Inter', sans-serif;
@@ -40,14 +39,41 @@
       line-height: 1.55;
       -webkit-print-color-adjust: exact;
       print-color-adjust: exact;
-      overflow: hidden;
     }
 
     /* ─── LAYOUT ─── */
     .page {
       display: grid;
       grid-template-rows: auto 1fr auto;
-      height: 100%;
+      width: 8.5in;
+      height: 11in;
+      overflow: hidden;
+      break-after: page;
+    }
+
+    .page:last-child { break-after: auto; }
+
+    /* ─── PAGE 2 HEADER ─── */
+    .mini-header {
+      background: var(--accent);
+      color: #fff;
+      padding: 14px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .mini-header b {
+      font-family: 'Source Serif 4', serif;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .mini-header span {
+      font-size: 10.5px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.75);
     }
 
     /* ─── HEADER ─── */
@@ -118,7 +144,7 @@
       background: var(--bg2);
       display: flex;
       flex-direction: column;
-      gap: 15px;
+      gap: 18px;
     }
 
     /* ─── SECTION LABELS ─── */
@@ -379,7 +405,6 @@
 <body>
   <div class="page">
 
-    <!-- HEADER -->
     <header>
       <div class="hd-left">
         <h1>Gerardo Esteban<br>Martínez López</h1>
@@ -394,16 +419,10 @@
       </div>
     </header>
 
-    <!-- BODY -->
     <div class="body">
-
-      <!-- LEFT COLUMN -->
       <div class="col-main">
-
-        <!-- EXPERIENCIA -->
         <section>
           <div class="sec-label">Experiencia</div>
-
           <div class="job">
             <div class="job-hd">
               <h3>Desarrollador Full Stack</h3>
@@ -411,11 +430,11 @@
             </div>
             <div class="job-org">FabricSoft</div>
             <ul>
-              <li>Desarrollo full stack de aplicaciones web con IA en producción: Next.js, React, TypeScript, Node.js/Express, Supabase y OpenAI.</li>
+              <li>Desarrollo full stack de aplicaciones web en producción con Next.js, React, TypeScript, Node.js/Express y Supabase (PostgreSQL).</li>
+              <li>Integración de modelos de OpenAI, embeddings con pgvector y flujos de voz con Vapi, con control de costos y respuestas validadas.</li>
               <li>Trabajo con pull requests, staging y producción, migraciones versionadas y pruebas con Vitest, Playwright y Postman.</li>
             </ul>
           </div>
-
           <div class="job">
             <div class="job-hd">
               <h3>Desarrollador de Software</h3>
@@ -423,26 +442,14 @@
             </div>
             <div class="job-org">Proyectos bajo demanda / Freelance</div>
             <ul>
-              <li>Aplicaciones web, APIs, sistemas internos y automatizaciones con React, Node.js y Python.</li>
-            </ul>
-          </div>
-
-          <div class="job">
-            <div class="job-hd">
-              <h3>Soporte Técnico y Mantenimiento</h3>
-              <span class="period">Servicio social</span>
-            </div>
-            <div class="job-org">ESCOM — IPN</div>
-            <ul>
-              <li>Diagnóstico de fallas, optimización de equipos y seguimiento de incidencias con usuarios.</li>
+              <li>Desarrollo de aplicaciones web, APIs y sistemas internos con React, Node.js y Python.</li>
+              <li>Construcción de interfaces, lógica backend, manejo de datos y automatizaciones con criterio de producto.</li>
+              <li>Proyectos externos seleccionados para páginas web, sistemas a medida e integraciones.</li>
             </ul>
           </div>
         </section>
-
-        <!-- PROYECTOS -->
         <section>
-          <div class="sec-label">Proyectos Destacados</div>
-
+          <div class="sec-label">Proyecto Destacado</div>
           <div class="job">
             <div class="job-hd">
               <h3>Reclútame</h3>
@@ -457,72 +464,60 @@
               <li>Sesiones con cierre en todos los dispositivos y límites de inactividad y duración por rol.</li>
               <li>Rendimiento: CLS móvil de 0.141 a 0, JS inicial de cada panel a menos de la mitad y búsqueda con pg_trgm.</li>
             </ul>
-            <div class="proj-tags" style="margin-top: 5px;">
+            <div class="proj-tags" style="margin-top: 7px;">
               <span>Next.js</span><span>TypeScript</span><span>Express</span><span>Supabase</span><span>pgvector</span><span>OpenAI</span><span>Vapi</span>
             </div>
           </div>
-
-          <div class="proj">
-            <div class="proj-hd">
-              <h3>Kuxipilli (TT 2026)</h3>
-              <a href="https://kuxipilli.com">kuxipilli.com</a>
-            </div>
-            <div class="proj-desc">Plataforma preventiva para madres y padres de familia, enfocada en seguridad digital.</div>
-            <div class="proj-tags">
-              <span>React</span><span>MERN Stack</span><span>UX/UI</span><span>ISO/IEEE SRS</span>
-            </div>
-          </div>
-
-          <div class="proj">
-            <div class="proj-hd">
-              <h3>Discord Server Admin Bot</h3>
-              <span style="font-size:10px; color:var(--ink-soft)">Google Cloud</span>
-            </div>
-            <div class="proj-desc">Bot desplegado en GCP para automatizar tareas administrativas y control operativo del servidor.</div>
-            <div class="proj-tags">
-              <span>Python</span><span>Google Cloud</span><span>APIs</span><span>Automatización</span>
-            </div>
-          </div>
-
         </section>
-
       </div>
 
-      <!-- RIGHT COLUMN -->
       <div class="col-side">
-
-        <!-- PERFIL -->
         <section>
           <div class="sec-label">Perfil</div>
-          <p class="profile-text">
-            Desarrollador Full Stack con experiencia llevando IA a producción: Next.js, React, TypeScript, Node.js, PostgreSQL, OpenAI y voz. Combino desarrollo, criterio de producto y documentación clara para entregar software mantenible con costos y seguridad bajo control.
-          </p>
+          <p class="profile-text">Desarrollador Full Stack con experiencia llevando IA a producción: Next.js, React, TypeScript, Node.js, PostgreSQL, OpenAI y voz. Combino desarrollo, criterio de producto y documentación clara para entregar software mantenible con costos y seguridad bajo control.</p>
         </section>
-
-        <!-- HABILIDADES -->
         <section>
           <div class="sec-label">Habilidades</div>
-
-          <div>
-            <div class="chips-block">
+          <div class="sk">
+            <div class="sk-row"><span>JavaScript / TypeScript</span><span>Avanzado</span></div>
+            <div class="sk-track"><div class="sk-fill" style="width:90%"></div></div>
+          </div>
+          <div class="sk">
+            <div class="sk-row"><span>Frontend · React</span><span>Avanzado</span></div>
+            <div class="sk-track"><div class="sk-fill" style="width:88%"></div></div>
+          </div>
+          <div class="sk">
+            <div class="sk-row"><span>Backend · Node.js</span><span>Avanzado</span></div>
+            <div class="sk-track"><div class="sk-fill" style="width:85%"></div></div>
+          </div>
+          <div class="sk">
+            <div class="sk-row"><span>Bases de datos SQL/NoSQL</span><span>Intermedio</span></div>
+            <div class="sk-track"><div class="sk-fill" style="width:80%"></div></div>
+          </div>
+          <div class="sk">
+            <div class="sk-row"><span>Cloud · Docker · DevOps</span><span>Intermedio</span></div>
+            <div class="sk-track"><div class="sk-fill" style="width:70%"></div></div>
+          </div>
+          <div style="margin-top: 12px;">
+            <div class="chips-block" style="margin-top:10px;">
               <h4>Lenguajes y Frameworks</h4>
               <div class="chips">
-                <span>TypeScript</span><span>JavaScript</span><span>React</span><span>Next.js</span><span>Tailwind</span><span>Node.js</span><span>Express</span><span>Python</span><span>FastAPI</span><span>C#</span><span>.NET</span><span>C/C++</span>
+                <span>TypeScript</span><span>JavaScript</span><span>Java</span><span>Python</span><span>PHP</span><span>C#</span><span>C/C++</span><span>HTML/CSS</span><span>React</span><span>Next.js</span><span>Angular</span><span>Vue.js</span><span>Redux</span><span>Tailwind</span><span>Node.js</span><span>Express</span><span>Spring Boot</span><span>Laravel</span><span>Django</span><span>Flask</span><span>FastAPI</span><span>.NET</span><span>GraphQL</span>
               </div>
             </div>
-            <div class="chips-block" style="margin-top:8px;">
+            <div class="chips-block" style="margin-top:10px;">
               <h4>IA aplicada</h4>
               <div class="chips">
                 <span>OpenAI API</span><span>Embeddings</span><span>pgvector</span><span>JSON Schema</span><span>Vapi</span>
               </div>
             </div>
-            <div class="chips-block" style="margin-top:8px;">
+            <div class="chips-block" style="margin-top:10px;">
               <h4>Cloud y Datos</h4>
               <div class="chips">
-                <span>Supabase</span><span>PostgreSQL</span><span>RLS</span><span>pg_trgm</span><span>MongoDB</span><span>SQL</span><span>Vercel</span><span>Google Cloud</span><span>Docker</span><span>Git/GitHub</span><span>Oracle (análisis de migración)</span>
+                <span>Supabase</span><span>PostgreSQL</span><span>MySQL</span><span>RLS</span><span>pg_trgm</span><span>MongoDB</span><span>SQL</span><span>AWS</span><span>Azure</span><span>Google Cloud</span><span>Vercel</span><span>Docker</span><span>Linux</span><span>CI/CD (GitHub Actions)</span><span>Git/GitHub</span><span>Oracle (análisis de migración)</span>
               </div>
             </div>
-            <div class="chips-block" style="margin-top:8px;">
+            <div class="chips-block" style="margin-top:10px;">
               <h4>Calidad y pruebas</h4>
               <div class="chips">
                 <span>Vitest</span><span>Playwright</span><span>Postman</span><span>Zod</span><span>ESLint</span>
@@ -530,18 +525,79 @@
             </div>
           </div>
         </section>
+      </div>
+    </div>
 
-        <!-- EDUCACIÓN -->
+    <footer>
+      <span>Gerardo Esteban Martínez López · CV Profesional · 1/2</span>
+      <span>tiboryeahrock@gmail.com · +52 56 4000 6312</span>
+    </footer>
+  </div>
+
+  <div class="page">
+
+    <div class="mini-header"><b>Gerardo Esteban Martínez López</b><span>Full Stack Developer · IA aplicada</span></div>
+
+    <div class="body">
+      <div class="col-main">
+        <section>
+          <div class="sec-label">Experiencia Adicional</div>
+          <div class="job">
+            <div class="job-hd">
+              <h3>Soporte Técnico y Mantenimiento</h3>
+              <span class="period">Servicio social</span>
+            </div>
+            <div class="job-org">ESCOM — IPN</div>
+            <ul>
+              <li>Diagnóstico de fallas, reemplazo de componentes y optimización del rendimiento de equipos.</li>
+              <li>Atención a usuarios, seguimiento de incidencias y aplicación de criterios técnicos documentales.</li>
+            </ul>
+          </div>
+        </section>
+        <section>
+          <div class="sec-label">Más Proyectos</div>
+          <div class="proj">
+            <div class="proj-hd">
+              <h3>Kuxipilli (TT 2026)</h3>
+              <a href="https://kuxipilli.com">kuxipilli.com</a>
+            </div>
+            <div class="proj-desc">Plataforma preventiva orientada a madres y padres de familia, enfocada en seguridad digital. Demuestra criterio de producto, frontend, documentación formal e ISO/IEEE SRS.</div>
+            <div class="proj-tags">
+              <span>React</span><span>MERN Stack</span><span>UX/UI</span><span>ISO/IEEE SRS</span>
+            </div>
+          </div>
+          <div class="proj">
+            <div class="proj-hd">
+              <h3>Discord Server Admin Bot</h3>
+              <span style="font-size:10px; color:var(--ink-soft)">Google Cloud</span>
+            </div>
+            <div class="proj-desc">Bot desplegado en GCP para automatizar tareas administrativas, comandos y control operativo del servidor. Demuestra despliegue real, automatización y mantenimiento de servicios.</div>
+            <div class="proj-tags">
+              <span>Python</span><span>Google Cloud</span><span>APIs</span><span>Automatización</span>
+            </div>
+          </div>
+          <div class="proj">
+            <div class="proj-hd">
+              <h3>Sistemas Cliente-Servidor con Sockets</h3>
+              <span></span>
+            </div>
+            <div class="proj-desc">Implementaciones con TCP/UDP para reforzar fundamentos de comunicación en red y lógica distribuida. Demuestra bases sólidas en networking y resolución técnica.</div>
+            <div class="proj-tags">
+              <span>Python</span><span>C</span><span>TCP/UDP</span><span>Networking</span>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="col-side">
         <section>
           <div class="sec-label">Formación</div>
           <div class="edu-item">
             <h3>Ingeniería en Sistemas Computacionales</h3>
             <div class="inst">ESCOM — IPN</div>
-            <div class="period">2022 — Presente</div>
+            <div class="period">2022 — Jun 2026 · Estudios concluidos</div>
           </div>
         </section>
-
-        <!-- CERTIFICACIONES -->
         <section>
           <div class="sec-label">Certificaciones</div>
           <div class="cert-item">
@@ -559,8 +615,6 @@
             </div>
           </div>
         </section>
-
-        <!-- IDIOMAS -->
         <section>
           <div class="sec-label">Idiomas</div>
           <div class="lang-row">
@@ -572,16 +626,13 @@
             <span class="llevel">Técnico profesional</span>
           </div>
         </section>
-
       </div>
     </div>
 
-    <!-- FOOTER -->
     <footer>
-      <span>Gerardo Esteban Martínez López · CV Profesional</span>
+      <span>Gerardo Esteban Martínez López · CV Profesional · 2/2</span>
       <span>tiboryeahrock@gmail.com · +52 56 4000 6312</span>
     </footer>
-
   </div>
 </body>
 </html>
