@@ -35,17 +35,30 @@
       padding: 0;
     }
 
+    html, body {
+      background: var(--bg);
+    }
+
     body {
       width: 8.5in;
-      height: 11in;
-      background: var(--bg);
       color: var(--txt);
       font-family: 'Space Grotesk', sans-serif;
-      padding: 0.45in;
       -webkit-print-color-adjust: exact;
       print-color-adjust: exact;
+    }
+
+    .sheet {
       position: relative;
+      width: 8.5in;
+      height: 11in;
+      padding: 0.45in;
       overflow: hidden;
+      background: var(--bg);
+      break-after: page;
+    }
+
+    .sheet:last-child {
+      break-after: auto;
     }
 
     /* Backdrop grids */
@@ -87,10 +100,7 @@
     }
 
     .header-left h1 span {
-      background: linear-gradient(90deg, var(--vsoft), var(--magenta) 60%, var(--cyan));
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: var(--vsoft);
     }
 
     .header-left .title-tag {
@@ -118,20 +128,20 @@
     .main-grid {
       display: grid;
       grid-template-columns: 1.35fr 1fr;
-      gap: 24px;
+      gap: 30px;
       flex: 1;
     }
 
     .col-left {
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 18px;
     }
 
     .col-right {
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 18px;
     }
 
     section {
@@ -160,7 +170,7 @@
 
     /* EXPERIENCE & PROJECTS */
     .item-block {
-      margin-bottom: 8px;
+      margin-bottom: 14px;
     }
 
     .item-block:last-child {
@@ -175,7 +185,7 @@
     }
 
     .item-header h3 {
-      font-size: 13.5px;
+      font-size: 15px;
       font-weight: 600;
       color: #fff;
     }
@@ -188,24 +198,24 @@
 
     .item-subheader {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 10px;
+      font-size: 11px;
       color: var(--vsoft);
-      margin-bottom: 3px;
+      margin-bottom: 6px;
     }
 
     .item-block ul {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 2px;
+      gap: 4px;
     }
 
     .item-block li {
       position: relative;
       padding-left: 14px;
       color: var(--muted);
-      font-size: 11.5px;
-      line-height: 1.35;
+      font-size: 12.5px;
+      line-height: 1.45;
     }
 
     .item-block li::before {
@@ -218,9 +228,9 @@
 
     .proj-desc {
       color: var(--muted);
-      font-size: 11.5px;
-      line-height: 1.35;
-      margin-bottom: 0;
+      font-size: 12.5px;
+      line-height: 1.45;
+      margin-bottom: 5px;
     }
 
     .proj-impact {
@@ -253,9 +263,9 @@
       border: 1px solid var(--line);
       border-radius: 12px;
       background: rgba(16, 12, 28, 0.5);
-      padding: 9px 10px;
-      font-size: 11.5px;
-      line-height: 1.4;
+      padding: 12px;
+      font-size: 12.5px;
+      line-height: 1.5;
       color: var(--muted);
     }
 
@@ -266,7 +276,7 @@
     }
 
     .sk-bar {
-      margin-bottom: 5px;
+      margin-bottom: 8px;
     }
 
     .sk-bar .sk-info {
@@ -293,8 +303,8 @@
     .skills-tech {
       display: flex;
       flex-direction: column;
-      gap: 4px;
-      margin-top: 7px;
+      gap: 6px;
+      margin-top: 12px;
     }
 
     .skills-tech h4 {
@@ -313,12 +323,12 @@
 
     .skills-tech .chips span {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 9.5px;
+      font-size: 10.5px;
       color: var(--vsoft);
       background: rgba(168, 85, 247, 0.05);
       border: 1px solid var(--line);
-      padding: 1px 5px;
-      border-radius: 5px;
+      padding: 2px 7px;
+      border-radius: 6px;
     }
 
     .edu-item {
@@ -364,6 +374,26 @@
       font-weight: 500;
     }
 
+    /* PAGE 2 HEADER */
+    .mini-header {
+      border-bottom: 1px solid var(--line2);
+      padding-bottom: 10px;
+      margin-bottom: 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--vbright);
+    }
+
+    .mini-header b {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: #fff;
+    }
+
     /* FOOTER */
     footer {
       border-top: 1px solid var(--line);
@@ -379,10 +409,10 @@
   </style>
 </head>
 <body>
+<div class="sheet">
   <div class="grid-bg"></div>
   <div class="container">
-    
-    <!-- HEADER -->
+
     <header>
       <div class="header-left">
         <h1>Gerardo Esteban<br><span>Martínez López</span></h1>
@@ -397,16 +427,10 @@
       </div>
     </header>
 
-    <!-- MAIN GRID -->
     <div class="main-grid">
-      
-      <!-- LEFT COLUMN -->
       <div class="col-left">
-        
-        <!-- EXPERIENCIA -->
         <section>
           <div class="seclabel">Experiencia relevante</div>
-          
           <div class="item-block">
             <div class="item-header">
               <h3>Desarrollador Full Stack</h3>
@@ -414,11 +438,11 @@
             </div>
             <div class="item-subheader">FabricSoft</div>
             <ul>
-              <li>Desarrollo full stack de aplicaciones web con IA en producción: Next.js, React, TypeScript, Node.js/Express, Supabase y OpenAI.</li>
+              <li>Desarrollo full stack de aplicaciones web en producción con Next.js, React, TypeScript, Node.js/Express y Supabase (PostgreSQL).</li>
+              <li>Integración de modelos de OpenAI, embeddings con pgvector y flujos de voz con Vapi, con control de costos y respuestas validadas.</li>
               <li>Trabajo con pull requests, staging y producción, migraciones versionadas y pruebas con Vitest, Playwright y Postman.</li>
             </ul>
           </div>
-
           <div class="item-block">
             <div class="item-header">
               <h3>Desarrollador de Software</h3>
@@ -426,32 +450,20 @@
             </div>
             <div class="item-subheader">Proyectos bajo demanda</div>
             <ul>
-              <li>Aplicaciones web, APIs, sistemas internos y automatizaciones con React, Node.js y Python.</li>
-            </ul>
-          </div>
-
-          <div class="item-block">
-            <div class="item-header">
-              <h3>Soporte Técnico y Mantenimiento</h3>
-              <span class="date-tag">Experiencia práctica</span>
-            </div>
-            <div class="item-subheader">ESCOM — Servicio Social</div>
-            <ul>
-              <li>Diagnóstico de fallas, optimización de equipos y seguimiento de incidencias con usuarios.</li>
+              <li>Desarrollo de aplicaciones web, APIs y soluciones internas con React, Node.js y Python.</li>
+              <li>Construcción de interfaces, lógica backend, manejo de datos y automatizaciones con criterio de producto.</li>
+              <li>Proyectos externos seleccionados para páginas web, sistemas a medida e integraciones.</li>
             </ul>
           </div>
         </section>
-
-        <!-- PROYECTOS -->
         <section>
-          <div class="seclabel">Proyectos destacados</div>
-
+          <div class="seclabel">Proyecto destacado</div>
           <div class="item-block">
             <div class="item-header">
               <h3>Reclútame</h3>
               <span class="date-tag"><a href="https://www.reclutame.ai/" target="_blank" style="color: var(--cyan); text-decoration: underline;">reclutame.ai</a></span>
             </div>
-            <div class="item-subheader">Reclutamiento con IA en producción · Full Stack · Equipo de 2</div>
+            <div class="item-subheader">Reclutamiento con IA · Full Stack · Equipo de 2</div>
             <ul>
               <li>Módulos de vacantes, compatibilidad, preentrevistas y entrevistas por voz con IA.</li>
               <li>Compatibilidad con embeddings y pgvector; salidas de OpenAI validadas con esquemas Zod y JSON Schema.</li>
@@ -460,51 +472,18 @@
               <li>Sesiones con cierre en todos los dispositivos y límites de inactividad y duración por rol.</li>
               <li>Rendimiento: CLS móvil de 0.141 a 0, JS inicial de cada panel a menos de la mitad y búsqueda con pg_trgm.</li>
             </ul>
-            <div class="tags" style="margin-top: 6px;"><span>Next.js</span><span>TypeScript</span><span>Express</span><span>Supabase</span><span>pgvector</span><span>OpenAI</span><span>Vapi</span></div>
-          </div>
-
-          <div class="item-block">
-            <div class="item-header">
-              <h3>Kuxipilli (TT 2026)</h3>
-              <span class="date-tag"><a href="https://kuxipilli.com/" target="_blank" style="color: var(--cyan); text-decoration: underline;">kuxipilli.com</a></span>
-            </div>
-            <div class="proj-desc">Plataforma preventiva para familias enfocada en seguridad digital. React, MERN, UX/UI e ISO/IEEE SRS.</div>
-          </div>
-
-          <div class="item-block">
-            <div class="item-header">
-              <h3>Kokoro Souls</h3>
-              <span class="date-tag"><a href="https://tiboryeah.github.io/kokoro-3-souls/index.html" target="_blank" style="color: var(--cyan); text-decoration: underline;">Ver desarrollo</a></span>
-            </div>
-            <div class="proj-desc">Videojuego narrativo en desarrollo con Python/Ren'Py y control de estado.</div>
-          </div>
-
-          <div class="item-block">
-            <div class="item-header">
-              <h3>Discord Server Admin Bot</h3>
-              <span class="date-tag">Google Cloud</span>
-            </div>
-            <div class="proj-desc">Bot en Python desplegado en GCP para automatizar tareas administrativas.</div>
+            <div class="tags" style="margin-top: 8px;"><span>Next.js</span><span>TypeScript</span><span>Express</span><span>Supabase</span><span>pgvector</span><span>OpenAI</span><span>Vapi</span></div>
           </div>
         </section>
-
       </div>
 
-      <!-- RIGHT COLUMN -->
       <div class="col-right">
-        
-        <!-- PERFIL -->
         <section>
           <div class="seclabel">Perfil profesional</div>
-          <div class="profile-card">
-            Desarrollador Full Stack con experiencia llevando <em>IA a producción</em>: Next.js, React, TypeScript, Node.js, PostgreSQL, OpenAI y voz. Combino desarrollo, criterio de producto y documentación clara para entregar software mantenible con costos y seguridad bajo control.
-          </div>
+          <div class="profile-card">Desarrollador Full Stack con experiencia llevando <em>IA a producción</em>: Next.js, React, TypeScript, Node.js, PostgreSQL, OpenAI y voz. Combino desarrollo, criterio de producto y documentación clara para entregar software mantenible con costos y seguridad bajo control.</div>
         </section>
-
-        <!-- HABILIDADES -->
         <section>
           <div class="seclabel">Habilidades de control</div>
-          
           <div class="sk-bar">
             <div class="sk-info"><span style="color: #fff">JavaScript / TypeScript</span><span>90%</span></div>
             <div class="sk-track"><div class="sk-fill" style="width: 90%"></div></div>
@@ -514,35 +493,31 @@
             <div class="sk-track"><div class="sk-fill" style="width: 88%"></div></div>
           </div>
           <div class="sk-bar">
-            <div class="sk-info"><span style="color: #fff">Backend & APIs · Node.js</span><span>85%</span></div>
+            <div class="sk-info"><span style="color: #fff">Backend &amp; APIs · Node.js</span><span>85%</span></div>
             <div class="sk-track"><div class="sk-fill" style="width: 85%"></div></div>
           </div>
           <div class="sk-bar">
             <div class="sk-info"><span style="color: #fff">Bases de datos · SQL / NoSQL</span><span>80%</span></div>
             <div class="sk-track"><div class="sk-fill" style="width: 80%"></div></div>
           </div>
-
           <div class="skills-tech">
             <h4>Lenguajes y Frameworks</h4>
             <div class="chips">
-              <span>TypeScript</span><span>JavaScript</span><span>React</span><span>Next.js</span><span>Tailwind</span><span>Node.js</span><span>Express</span><span>Python</span><span>FastAPI</span><span>C#</span><span>.NET</span><span>C/C++</span>
+              <span>TypeScript</span><span>JavaScript</span><span>Java</span><span>Python</span><span>PHP</span><span>C#</span><span>C/C++</span><span>HTML/CSS</span><span>React</span><span>Next.js</span><span>Angular</span><span>Vue.js</span><span>Redux</span><span>Tailwind</span><span>Node.js</span><span>Express</span><span>Spring Boot</span><span>Laravel</span><span>Django</span><span>Flask</span><span>FastAPI</span><span>.NET</span><span>GraphQL</span>
             </div>
           </div>
-
           <div class="skills-tech">
             <h4>IA aplicada</h4>
             <div class="chips">
               <span>OpenAI API</span><span>Embeddings</span><span>pgvector</span><span>JSON Schema</span><span>Vapi</span>
             </div>
           </div>
-
           <div class="skills-tech">
-            <h4>Cloud & Datos</h4>
+            <h4>Cloud &amp; Datos</h4>
             <div class="chips">
-              <span>Supabase</span><span>PostgreSQL</span><span>RLS</span><span>pg_trgm</span><span>MongoDB</span><span>SQL</span><span>Vercel</span><span>Google Cloud</span><span>Docker</span><span>Git/GitHub</span><span>Oracle (análisis de migración)</span>
+              <span>Supabase</span><span>PostgreSQL</span><span>MySQL</span><span>RLS</span><span>pg_trgm</span><span>MongoDB</span><span>SQL</span><span>AWS</span><span>Azure</span><span>Google Cloud</span><span>Vercel</span><span>Docker</span><span>Linux</span><span>CI/CD (GitHub Actions)</span><span>Git/GitHub</span><span>Oracle (análisis de migración)</span>
             </div>
           </div>
-
           <div class="skills-tech">
             <h4>Calidad y pruebas</h4>
             <div class="chips">
@@ -550,18 +525,88 @@
             </div>
           </div>
         </section>
+      </div>
+    </div>
 
-        <!-- EDUCACIÓN -->
+    <footer>
+      <div>Gerardo Esteban Martínez López · CV de Desarrollo · 1/2</div>
+      <div>https://Tiboryeah.github.io/CV_Tibo-/</div>
+    </footer>
+  </div>
+</div>
+
+<div class="sheet">
+  <div class="grid-bg"></div>
+  <div class="container">
+
+    <div class="mini-header"><b>Gerardo Esteban Martínez López</b><span>FULL_STACK_DEVELOPER · IA_APLICADA</span></div>
+
+    <div class="main-grid">
+      <div class="col-left">
+        <section>
+          <div class="seclabel">Experiencia adicional</div>
+          <div class="item-block">
+            <div class="item-header">
+              <h3>Soporte Técnico y Mantenimiento</h3>
+              <span class="date-tag">Experiencia práctica</span>
+            </div>
+            <div class="item-subheader">ESCOM — Servicio Social</div>
+            <ul>
+              <li>Diagnóstico de fallas, reemplazo de componentes y optimización del rendimiento de equipos.</li>
+              <li>Atención a usuarios, seguimiento de incidencias y aplicación de criterios técnicos documentales.</li>
+            </ul>
+          </div>
+        </section>
+        <section>
+          <div class="seclabel">Más proyectos</div>
+          <div class="item-block">
+            <div class="item-header">
+              <h3>Kuxipilli (TT 2026)</h3>
+              <span class="date-tag"><a href="https://kuxipilli.com/" target="_blank" style="color: var(--cyan); text-decoration: underline;">kuxipilli.com</a></span>
+            </div>
+            <div class="proj-desc">Plataforma preventiva orientada a madres y padres de familia, enfocada en seguridad digital y experiencia de uso clara.</div>
+            <div class="proj-impact">Muestra capacidad para trabajar producto, frontend, documentación formal e ISO/IEEE SRS.</div>
+            <div class="tags"><span>React</span><span>MERN</span><span>UX/UI</span><span>ISO/IEEE SRS</span></div>
+          </div>
+          <div class="item-block">
+            <div class="item-header">
+              <h3>Kokoro Souls</h3>
+              <span class="date-tag"><a href="https://tiboryeah.github.io/kokoro-3-souls/index.html" target="_blank" style="color: var(--cyan); text-decoration: underline;">Ver desarrollo</a></span>
+            </div>
+            <div class="proj-desc">Videojuego interactivo en desarrollo con Python/Ren'Py, combinando narrativa estructurada y control de estado.</div>
+            <div class="proj-impact">Demuestra lógica de juego, scripting de historia y control de estado complejo.</div>
+            <div class="tags"><span>Python</span><span>Ren'Py</span><span>Game Design</span><span>Scripting</span></div>
+          </div>
+          <div class="item-block">
+            <div class="item-header">
+              <h3>Discord Server Admin Bot</h3>
+              <span class="date-tag">Google Cloud</span>
+            </div>
+            <div class="proj-desc">Bot desplegado en GCP para automatizar tareas administrativas, comandos y control operativo.</div>
+            <div class="proj-impact">Demuestra despliegue real, automatización, APIs y mantenimiento de servicios.</div>
+            <div class="tags"><span>Python</span><span>Google Cloud</span><span>APIs</span><span>Automatización</span></div>
+          </div>
+          <div class="item-block">
+            <div class="item-header">
+              <h3>Sistemas Cliente-Servidor con Sockets</h3>
+              <span class="date-tag">Redes</span>
+            </div>
+            <div class="proj-desc">Implementaciones con TCP/UDP para reforzar fundamentos de comunicación en red y lógica distribuida.</div>
+            <div class="proj-impact">Refuerza bases sólidas en networking, backend y resolución técnica.</div>
+            <div class="tags"><span>Python</span><span>C</span><span>TCP/UDP</span><span>Networking</span></div>
+          </div>
+        </section>
+      </div>
+
+      <div class="col-right">
         <section>
           <div class="seclabel">Formación</div>
           <div class="edu-item">
             <h3>Ingeniería en Sistemas Computacionales</h3>
             <div class="detail">ESCOM IPN · Escuela Superior de Cómputo</div>
-            <div class="period">2022 — Presente</div>
+            <div class="period">2022 — Jun 2026 · Estudios concluidos</div>
           </div>
         </section>
-
-        <!-- CERTIFICACIONES -->
         <section>
           <div class="seclabel">Certificaciones</div>
           <div class="cert-row">
@@ -573,17 +618,25 @@
             <div><span class="t">Desarrollo Web Full Stack</span><br><span style="font-size: 10px;">Autodidacta / Proyectos Reales (2023)</span></div>
           </div>
         </section>
-
+        <section>
+          <div class="seclabel">Idiomas</div>
+          <div class="cert-row">
+            <span class="bullet">❖</span>
+            <div><span class="t">Español</span><br><span style="font-size: 10px;">Nativo</span></div>
+          </div>
+          <div class="cert-row">
+            <span class="bullet">❖</span>
+            <div><span class="t">Inglés</span><br><span style="font-size: 10px;">Técnico profesional</span></div>
+          </div>
+        </section>
       </div>
-
     </div>
 
-    <!-- FOOTER -->
     <footer>
-      <div>Gerardo Esteban Martínez López · CV de Desarrollo</div>
+      <div>Gerardo Esteban Martínez López · CV de Desarrollo · 2/2</div>
       <div>https://Tiboryeah.github.io/CV_Tibo-/</div>
     </footer>
-
   </div>
+</div>
 </body>
 </html>

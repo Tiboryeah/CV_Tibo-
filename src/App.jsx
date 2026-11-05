@@ -174,7 +174,7 @@ const content = {
         {
           title: 'Lenguajes y frameworks',
           icon: Code2,
-          items: ['TypeScript', 'JavaScript', 'React', 'Next.js', 'Tailwind CSS', 'Node.js', 'Express', 'Python', 'FastAPI', 'C', 'C++', 'C#', '.NET'],
+          items: ['TypeScript', 'JavaScript', 'Java', 'Python', 'PHP', 'C', 'C++', 'C#', 'HTML/CSS', 'React', 'Next.js', 'Angular', 'Vue.js', 'Redux', 'Tailwind CSS', 'Node.js', 'Express', 'Spring Boot', 'Laravel', 'Django', 'Flask', 'FastAPI', '.NET', 'GraphQL'],
         },
         {
           title: 'IA aplicada',
@@ -184,12 +184,12 @@ const content = {
         {
           title: 'Datos y backend',
           icon: Database,
-          items: ['Supabase', 'PostgreSQL', 'Row Level Security', 'pg_trgm', 'MongoDB', 'SQL', 'MERN Stack', 'Diseño de APIs', 'Sockets TCP/UDP'],
+          items: ['Supabase', 'PostgreSQL', 'MySQL', 'Row Level Security', 'pg_trgm', 'MongoDB', 'SQL', 'MERN Stack', 'Diseño de APIs', 'Sockets TCP/UDP'],
         },
         {
           title: 'Cloud, tooling y trabajo técnico',
           icon: Globe,
-          items: ['Vercel', 'Google Cloud', 'Compute Engine', 'BigQuery', 'Docker', 'Git', 'GitHub', 'UML', 'ISO/IEEE SRS', 'Oracle (análisis de migración)'],
+          items: ['AWS', 'Azure', 'Google Cloud', 'Compute Engine', 'BigQuery', 'Vercel', 'Docker', 'Linux', 'CI/CD (GitHub Actions)', 'Git', 'GitHub', 'UML', 'ISO/IEEE SRS', 'Oracle (análisis de migración)'],
         },
         {
           title: 'Calidad y pruebas',
@@ -289,7 +289,7 @@ const content = {
         {
           name: 'IPN - ESCOM',
           detail: 'Ingeniería en Sistemas Computacionales',
-          period: '2022 - Actualidad',
+          period: '2022 - Junio 2026',
         },
       ],
     },
@@ -297,7 +297,7 @@ const content = {
       eyebrow: 'FORMACIÓN Y CURSOS',
       title: 'Credenciales destacadas',
       items: [
-        { t: 'Ingeniería en Sistemas Computacionales', m: 'ESCOM IPN · En curso', yr: '2022 - Presente' },
+        { t: 'Ingeniería en Sistemas Computacionales', m: 'ESCOM IPN · Estudios concluidos', yr: '2022 - 2026' },
         { t: 'Curso de Cloud Computing', m: 'Google Cloud · Especialización', yr: '2024' },
         { t: 'Desarrollo Web Full Stack', m: 'Autodidacta / Proyectos Reales', yr: '2023' }
       ]
@@ -419,7 +419,7 @@ const content = {
         {
           title: 'Languages and frameworks',
           icon: Code2,
-          items: ['TypeScript', 'JavaScript', 'React', 'Next.js', 'Tailwind CSS', 'Node.js', 'Express', 'Python', 'FastAPI', 'C', 'C++', 'C#', '.NET'],
+          items: ['TypeScript', 'JavaScript', 'Java', 'Python', 'PHP', 'C', 'C++', 'C#', 'HTML/CSS', 'React', 'Next.js', 'Angular', 'Vue.js', 'Redux', 'Tailwind CSS', 'Node.js', 'Express', 'Spring Boot', 'Laravel', 'Django', 'Flask', 'FastAPI', '.NET', 'GraphQL'],
         },
         {
           title: 'Applied AI',
@@ -429,12 +429,12 @@ const content = {
         {
           title: 'Data and backend',
           icon: Database,
-          items: ['Supabase', 'PostgreSQL', 'Row Level Security', 'pg_trgm', 'MongoDB', 'SQL', 'MERN Stack', 'API design', 'TCP/UDP sockets'],
+          items: ['Supabase', 'PostgreSQL', 'MySQL', 'Row Level Security', 'pg_trgm', 'MongoDB', 'SQL', 'MERN Stack', 'API design', 'TCP/UDP sockets'],
         },
         {
           title: 'Cloud, tooling, and engineering work',
           icon: Globe,
-          items: ['Vercel', 'Google Cloud', 'Compute Engine', 'BigQuery', 'Docker', 'Git', 'GitHub', 'UML', 'ISO/IEEE SRS', 'Oracle (migration analysis)'],
+          items: ['AWS', 'Azure', 'Google Cloud', 'Compute Engine', 'BigQuery', 'Vercel', 'Docker', 'Linux', 'CI/CD (GitHub Actions)', 'Git', 'GitHub', 'UML', 'ISO/IEEE SRS', 'Oracle (migration analysis)'],
         },
         {
           title: 'Quality and testing',
@@ -534,7 +534,7 @@ const content = {
         {
           name: 'IPN - ESCOM',
           detail: 'Systems Engineering',
-          period: '2022 - Present',
+          period: '2022 - June 2026',
         },
       ],
     },
@@ -542,7 +542,7 @@ const content = {
       eyebrow: 'CREDENTIALS & COURSES',
       title: 'Key certifications',
       items: [
-        { t: 'Systems Engineering', m: 'ESCOM IPN · In progress', yr: '2022 - Present' },
+        { t: 'Systems Engineering', m: 'ESCOM IPN · Studies completed', yr: '2022 - 2026' },
         { t: 'Cloud Computing Course', m: 'Google Cloud · Specialization', yr: '2024' },
         { t: 'Full Stack Web Development', m: 'Self-taught / Real Projects', yr: '2023' }
       ]
