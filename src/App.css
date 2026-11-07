@@ -9,6 +9,7 @@
   --violet: #a855f7;
   --vbright: #c084fc;
   --vsoft: #d8b4fe;
+  --violet-soft: var(--vsoft);
   --magenta: #e879f9;
   --cyan: #22d3ee;
   --green: #5ef2b4;
@@ -111,117 +112,102 @@ a {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: 268px 1fr;
-  max-width: 1480px;
-  margin: 0 auto;
+  grid-template-columns: 268px minmax(0, 1fr);
 }
 
 .side {
   position: sticky;
   top: 0;
   height: 100vh;
+  height: 100dvh;
   border-right: 1px solid var(--line);
-  padding: 26px 22px;
+  padding: 22px 16px 18px;
   display: flex;
   flex-direction: column;
-  gap: 22px;
-  background: linear-gradient(180deg, rgba(16, 12, 28, .55), transparent);
+  gap: 16px;
+  background: rgba(10, 8, 20, .72);
+}
+
+.side-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding-left: 1px;
 }
 
 .brand {
   display: flex;
   align-items: center;
-  gap: 13px;
+  gap: 11px;
+  min-width: 0;
 }
 
 .avatar {
-  width: 54px;
-  height: 54px;
-  border-radius: 14px;
-  position: relative;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
   flex-shrink: 0;
-  background: conic-gradient(from 140deg, var(--violet), var(--magenta), var(--cyan), var(--violet));
-  padding: 2px;
-}
-
-.avatar .in {
-  width: 100%;
-  height: 100%;
-  border-radius: 12px;
-  background: var(--bg2);
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 1px solid var(--line2);
+  background: rgba(168, 85, 247, .12);
+  font-family: 'Space Grotesk', sans-serif;
   font-weight: 700;
-  font-size: 20px;
+  font-size: 14px;
+  letter-spacing: .02em;
   color: var(--vsoft);
 }
 
-.avatar .ring {
-  position: absolute;
-  inset: -5px;
-  border: 1px solid var(--line2);
-  border-radius: 18px;
-  animation: spin 14s linear infinite;
+.brand .col {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.brand .nm {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 1.25;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.brand .rl {
+  font-size: 12px;
+  line-height: 1.35;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.avail {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 1px;
+  padding: 4px 11px;
+  border: 1px solid rgba(94, 242, 180, .24);
+  border-radius: 999px;
+  background: rgba(94, 242, 180, .06);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--green);
+}
+
+.avail .d {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--green);
 }
 
 @keyframes spin {
   to {
     transform: rotate(360deg);
   }
-}
-
-.brand .col {
-  min-width: 0;
-}
-
-.brand .nm {
-  font-weight: 700;
-  font-size: 14.5px;
-  line-height: 1.2;
-  white-space: nowrap;
-}
-
-.brand .rl {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
-  color: var(--vbright);
-  letter-spacing: .5px;
-  margin-top: 2px;
-}
-
-.statusbox {
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  padding: 11px 13px;
-  background: var(--panel);
-}
-
-.statusbox .t {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  color: var(--dim);
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-}
-
-.statusbox .v {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 6px;
-  font-size: 13px;
-  color: var(--green);
-  font-weight: 600;
-}
-
-.statusbox .v .d {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--green);
-  box-shadow: 0 0 10px var(--green);
-  animation: pulse 2s infinite;
 }
 
 @keyframes pulse {
@@ -234,64 +220,68 @@ a {
 }
 
 .snav {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #2a2046 transparent;
   display: flex;
   flex-direction: column;
   gap: 2px;
 }
 
 .snav a {
+  position: relative;
+  flex-shrink: 0;
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 9px 12px;
-  border-radius: 10px;
+  gap: 11px;
+  padding: 8px 12px;
+  border-radius: 8px;
   color: var(--muted);
-  font-size: 13.5px;
+  font-size: 14px;
   font-weight: 500;
-  transition: .18s;
-  border: 1px solid transparent;
-  cursor: pointer;
+  transition: background .15s, color .15s;
 }
 
-.snav a .ic {
-  width: 16px;
-  text-align: center;
-  font-family: 'JetBrains Mono', monospace;
-  color: var(--violet);
-  font-size: 12px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.snav a .no {
-  margin-left: auto;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  color: var(--dim);
+.snav a svg {
+  flex-shrink: 0;
+  opacity: .8;
 }
 
 .snav a:hover {
-  background: rgba(168, 85, 247, .08);
+  background: rgba(168, 85, 247, .07);
   color: var(--txt);
 }
 
 .snav a.on {
-  background: linear-gradient(90deg, rgba(168, 85, 247, .18), rgba(168, 85, 247, .03));
-  border-color: var(--line2);
+  background: rgba(168, 85, 247, .13);
   color: #fff;
 }
 
-.snav a.on .ic {
-  color: var(--magenta);
-  filter: drop-shadow(0 0 6px var(--magenta));
+.snav a.on svg {
+  color: var(--vbright);
+  opacity: 1;
 }
 
-.side .sfoot {
-  margin-top: auto;
+.snav a.on::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  border-radius: 2px;
+  background: var(--vbright);
+}
+
+.sfoot {
+  flex-shrink: 0;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
 }
 
 .side .dl {
@@ -299,36 +289,95 @@ a {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 12px;
+  font-size: 13.5px;
   font-weight: 600;
   color: #0a0612;
-  background: linear-gradient(90deg, var(--violet), var(--magenta));
-  padding: 11px;
-  border-radius: 10px;
-  box-shadow: 0 0 22px rgba(168, 85, 247, .35);
-  transition: .2s;
+  background: var(--vbright);
+  padding: 10px;
+  border-radius: 8px;
+  transition: background .15s;
 }
 
 .side .dl:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 0 32px rgba(232, 121, 249, .5);
+  background: var(--vsoft);
 }
 
-.side .switch {
-  text-align: center;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
-  color: var(--dim);
+.sfoot-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
 }
 
-.side .switch a {
-  color: var(--vbright);
+.social {
+  display: flex;
+  gap: 2px;
+}
+
+.iconbtn {
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: none;
+  color: var(--muted);
   cursor: pointer;
+  touch-action: manipulation;
+  transition: background .15s, color .15s;
 }
 
-/* mobile topbar */
-.mtop {
+.iconbtn:hover {
+  background: rgba(168, 85, 247, .1);
+  color: #fff;
+}
+
+.lang {
+  display: inline-flex;
+  flex-shrink: 0;
+  padding: 2px;
+  border: 1px solid var(--line2);
+  border-radius: 8px;
+}
+
+.lang button {
+  min-width: 32px;
+  height: 26px;
+  padding: 0 6px;
+  border-radius: 6px;
+  background: none;
+  color: var(--muted);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11.5px;
+  font-weight: 600;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: background .15s, color .15s;
+}
+
+.lang button:hover {
+  color: #fff;
+}
+
+.lang button.on {
+  background: var(--vbright);
+  color: #0a0612;
+}
+
+.side a:focus-visible,
+.side button:focus-visible,
+.mtop a:focus-visible,
+.mtop button:focus-visible {
+  outline: 2px solid var(--vbright);
+  outline-offset: 2px;
+}
+
+/* Only shown on the mobile layout */
+.mtop,
+.scrim,
+.side-close {
   display: none;
 }
 
@@ -341,6 +390,8 @@ main {
 section {
   padding: clamp(60px, 10vh, 118px) 0;
   position: relative;
+  max-width: 1560px;
+  margin-inline: auto;
 }
 
 .seclabel {
@@ -550,6 +601,12 @@ section {
   height: min(440px, 62vh);
 }
 
+@media (min-width: 1500px) {
+  .termwin {
+    height: min(580px, 68vh);
+  }
+}
+
 .termwin .tbar {
   display: flex;
   align-items: center;
@@ -587,9 +644,14 @@ section {
 }
 
 .termwin .tt {
+  flex: 1;
+  min-width: 0;
   font-family: 'JetBrains Mono', monospace;
   font-size: 11.5px;
   color: var(--muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .termwin .tt b {
@@ -980,6 +1042,7 @@ section {
 
 .xrow li {
   position: relative;
+  max-width: 110ch;
   padding-left: 21px;
   color: var(--muted);
   font-size: 14.5px;
@@ -998,6 +1061,7 @@ section {
 }
 
 .edu p {
+  max-width: 110ch;
   color: var(--muted);
   font-size: 14.5px;
   line-height: 1.6;
@@ -1123,19 +1187,29 @@ section {
   color: var(--txt, #efecf8);
 }
 
+/* Flex rather than grid so the cards in a short last row grow to fill it */
 .pgrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 18px;
 }
 
 .pcard {
+  flex: 1 1 300px;
+  min-width: 0;
   border: 1px solid var(--line);
   border-radius: 16px;
   overflow: hidden;
   background: var(--card);
   transition: .28s;
   text-align: left;
+}
+
+/* Wide screens would otherwise fit 4 + 1, leaving one card stretched across the whole row */
+@media (min-width: 1640px) {
+  .pcard {
+    flex-basis: 400px;
+  }
 }
 
 .pcard:hover {
@@ -1209,14 +1283,27 @@ section {
 }
 
 /* ===== SERVICES ===== */
+/* Explicit 1, 2 or 4 columns: any empty cell would show the grid's line colour as a solid block */
 .sgrid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-template-columns: minmax(0, 1fr);
   gap: 1px;
   background: var(--line);
   border: 1px solid var(--line);
   border-radius: 16px;
   overflow: hidden;
+}
+
+@media (min-width: 541px) {
+  .sgrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1280px) {
+  .sgrid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
 }
 
 .scell {
@@ -1397,66 +1484,346 @@ footer a {
   cursor: pointer;
 }
 
-/* ===== responsive sidebar -> topbar ===== */
-@media(max-width: 860px) {
-  .shell {
-    grid-template-columns: 1fr;
+/* ===== mobile layout: topbar + drawer ===== */
+@media (max-width: 960px) {
+  /* :root so it beats the html rule in index.css, which loads after this file */
+  :root {
+    scroll-padding-top: 72px;
   }
-  
-  .side {
+
+  html.nav-locked,
+  html.nav-locked body {
+    overflow: hidden;
+  }
+
+  .shell {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .mtop {
     position: sticky;
     top: 0;
-    height: auto;
-    flex-direction: row;
-    align-items: center;
-    gap: 14px;
-    border-right: none;
-    border-bottom: 1px solid var(--line);
-    padding: 12px 16px;
     z-index: 40;
-    background: rgba(8, 6, 14, .9);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10px max(16px, env(safe-area-inset-right)) 10px max(16px, env(safe-area-inset-left));
+    border-bottom: 1px solid var(--line);
+    background: rgba(8, 6, 14, .92);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    flex-wrap: wrap;
   }
-  
-  .side .statusbox {
-    display: none;
+
+  .mtop-actions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
   }
-  
-  .snav {
-    flex-direction: row;
-    flex-wrap: wrap;
-    flex: 1;
-    gap: 2px;
+
+  .iconbtn {
+    width: 40px;
+    height: 40px;
   }
-  
-  .snav a {
-    padding: 7px 10px;
+
+  .lang button {
+    min-width: 38px;
+    height: 34px;
     font-size: 12px;
   }
-  
-  .snav a .no {
+
+  .scrim {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 45;
+    background: rgba(3, 2, 8, .62);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .24s ease;
+  }
+
+  .scrim.on {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .side {
+    position: fixed;
+    inset: 0 0 0 auto;
+    z-index: 50;
+    width: min(320px, 86vw);
+    height: auto;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 14px 14px max(18px, env(safe-area-inset-bottom));
+    border-right: none;
+    border-left: 1px solid var(--line2);
+    background: var(--bg2);
+    transform: translateX(100%);
+    visibility: hidden;
+    transition: transform .24s ease, visibility 0s linear .24s;
+  }
+
+  .side.open {
+    transform: none;
+    visibility: visible;
+    transition: transform .24s ease, visibility 0s;
+  }
+
+  .side-close {
+    display: inline-flex;
+  }
+
+  .side-toggle {
     display: none;
   }
-  
-  .side .sfoot {
-    margin-top: 0;
-    flex-direction: row;
+
+  .snav {
+    flex: none;
+    overflow: visible;
   }
-  
-  .side .switch {
-    display: none;
+
+  .snav a {
+    min-height: 44px;
+    font-size: 15px;
   }
-  
+
+  .sfoot {
+    margin-top: auto;
+  }
+
   .side .dl {
-    padding: 9px 14px;
+    padding: 12px;
+    font-size: 14px;
   }
-  
+
   .hero {
-    grid-template-columns: 1fr;
+    min-height: 0;
+    grid-template-columns: minmax(0, 1fr);
     gap: 34px;
-    padding-top: 30px;
+    padding-top: 36px;
+  }
+
+  /* Below 16px iOS zooms the page when the input gets focus */
+  #tcmd {
+    min-width: 0;
+    font-size: 16px;
+  }
+
+  .termwin {
+    height: min(480px, 72vh);
+  }
+
+  .tchips button {
+    padding: 7px 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero .kick {
+    font-size: 11.5px;
+    letter-spacing: 2.5px;
+  }
+
+  .hero .cta .btn {
+    flex: 1 1 auto;
+    justify-content: center;
+  }
+
+  .cv-dl-wrap {
+    flex: 1 1 100%;
+  }
+
+  .cv-dl-btn {
+    width: 100%;
+  }
+
+  .cv-dl-menu {
+    right: 0;
+    min-width: 0;
+  }
+
+  .clink {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .clink .v {
+    overflow-wrap: anywhere;
+  }
+
+  .crow {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .crow .yr {
+    grid-column: 2;
+  }
+}
+
+/* Narrowest phones: the monogram alone leaves room for the language switch and the menu button */
+@media (max-width: 359px) {
+  .mtop .col {
+    display: none;
+  }
+}
+
+/* ===== desktop: collapsible sidebar =====
+   The 72px rail keeps every icon at the same x position as the open sidebar, so nothing jumps while it animates. */
+.dl-rail,
+.sidetip {
+  display: none;
+}
+
+@media (min-width: 961px) {
+  .shell {
+    transition: grid-template-columns .22s ease;
+  }
+
+  .shell.collapsed {
+    grid-template-columns: 72px minmax(0, 1fr);
+  }
+
+  .side {
+    overflow: hidden;
+  }
+
+  .side-head {
+    position: relative;
+  }
+
+  .brand .col,
+  .snav .lbl {
+    transition: opacity .14s ease;
+  }
+
+  .snav a {
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .snav a:focus-visible {
+    outline-offset: -2px;
+  }
+
+  .shell.collapsed .brand .col,
+  .shell.collapsed .snav .lbl {
+    opacity: 0;
+  }
+
+  .shell.collapsed .snav {
+    scrollbar-width: none;
+  }
+
+  /* The monogram turns into the open button on hover */
+  .avatar,
+  .side-toggle {
+    transition: opacity .12s ease, background .15s, color .15s;
+  }
+
+  .shell.collapsed .side-toggle {
+    position: absolute;
+    top: 0;
+    left: 1px;
+    width: 38px;
+    height: 38px;
+    opacity: 0;
+  }
+
+  .shell.collapsed .side-head:hover .side-toggle,
+  .shell.collapsed .side-toggle:focus-visible {
+    opacity: 1;
+  }
+
+  .shell.collapsed .side-head:hover .avatar,
+  .shell.collapsed .side-head:has(.side-toggle:focus-visible) .avatar {
+    opacity: 0;
+  }
+
+  .shell.collapsed .avail {
+    margin-left: 0;
+    padding: 4px 0 4px 16px;
+    border-color: transparent;
+    background: none;
+  }
+
+  .shell.collapsed .avail .lbl,
+  .shell.collapsed .dl .lbl {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .shell.collapsed .dl-arrow {
+    display: none;
+  }
+
+  .shell.collapsed .dl-rail {
+    display: block;
+    flex-shrink: 0;
+  }
+
+  .shell.collapsed .sfoot-row {
+    flex-direction: column;
+  }
+
+  .shell.collapsed .social {
+    display: none;
+  }
+
+  .shell.collapsed .lang {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .shell.collapsed .lang button {
+    width: 100%;
+    min-width: 0;
+    padding: 0;
+  }
+}
+
+/* Touch screens at this width can't hover to reveal the button */
+@media (min-width: 961px) and (hover: none) {
+  .shell.collapsed .side-toggle {
+    opacity: 1;
+  }
+
+  .shell.collapsed .avatar {
+    opacity: 0;
+  }
+}
+
+@media (min-width: 961px) and (hover: hover) {
+  .sidetip {
+    display: block;
+    position: fixed;
+    z-index: 60;
+    transform: translateY(-50%);
+    padding: 5px 9px;
+    border: 1px solid var(--line2);
+    border-radius: 6px;
+    background: #1c1630;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, .45);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+    pointer-events: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shell,
+  .side,
+  .side.open,
+  .scrim {
+    transition: none;
   }
 }
 
@@ -1889,15 +2256,28 @@ footer a {
   height: 10px;
 }
 
-.cv-dl-wrap:hover .cv-dl-menu,
-.cv-dl-wrap:focus-within .cv-dl-menu {
+.cv-dl-wrap.open .cv-dl-menu {
   opacity: 1;
   pointer-events: all;
   transform: translateY(0);
 }
 
-.cv-dl-wrap:hover .cv-dl-arrow {
+.cv-dl-wrap.open .cv-dl-arrow {
   transform: rotate(180deg);
+}
+
+/* Hover and focus only open it where a mouse exists: on touch they would stick and fight the tap toggle */
+@media (hover: hover) {
+  .cv-dl-wrap:hover .cv-dl-menu,
+  .cv-dl-wrap:focus-within .cv-dl-menu {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0);
+  }
+
+  .cv-dl-wrap:hover .cv-dl-arrow {
+    transform: rotate(180deg);
+  }
 }
 
 .cv-dl-menu a {

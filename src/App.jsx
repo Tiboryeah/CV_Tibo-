@@ -1,26 +1,32 @@
 import React, { useEffect, useState, useRef } from 'react';
 import {
   ArrowRight,
+  Award,
   Briefcase,
   CheckCircle2,
   Code2,
   Cpu,
   Database,
   Download,
+  FolderKanban,
   Github,
   Globe,
   GraduationCap,
+  Home,
   Languages,
   Linkedin,
   Mail,
   Menu,
   MapPin,
   MessageSquare,
+  PanelLeftClose,
+  PanelLeftOpen,
   Phone,
   Rocket,
   Server,
   ShieldCheck,
   Target,
+  User,
   Users,
   Wrench,
   X
@@ -66,19 +72,37 @@ const ALIASES = {
 const ORDER = ['about', 'experience', 'education', 'skills', 'projects', 'services', 'certs', 'contact'];
 const SUGGEST = ['about', 'skills', 'projects', 'services', 'contact', 'help'];
 
+const SIDEBAR_STORAGE_KEY = 'cv-sidebar-collapsed';
+
+const NAV_ITEMS = [
+  { id: 'hero', key: 'overview', icon: Home },
+  { id: 'about', key: 'value', icon: User },
+  { id: 'exp', key: 'experience', icon: Briefcase },
+  { id: 'edu', key: 'education', icon: GraduationCap },
+  { id: 'skills', key: 'skills', icon: Code2 },
+  { id: 'projects', key: 'projects', icon: FolderKanban },
+  { id: 'services', key: 'services', icon: Wrench },
+  { id: 'certs', key: 'certs', icon: Award },
+  { id: 'contact', key: 'contact', icon: Mail },
+];
+
 const content = {
   es: {
     meta: {
       tagline: 'Full Stack Developer · IA aplicada · México',
       role: 'Full Stack Developer · IA aplicada',
-      roleShort: 'FULL_STACK + IA',
+      roleShort: 'Full Stack · IA aplicada',
       roleTags: ['Web', 'IA aplicada', 'Sistemas a medida', 'APIs', 'Automatizaciones'],
       skillDatabases: 'Bases de datos · SQL / NoSQL',
       skillAutomation: 'Automatización & integraciones',
       phoneLabel: 'Teléfono',
-      available: 'Disponible · contratando',
-      systemStatus: 'system_status',
-      langToggleLabel: 'Switch to English',
+      available: 'Disponible para proyectos',
+      langLabel: 'Idioma',
+      menuOpen: 'Abrir menú',
+      menuClose: 'Cerrar menú',
+      sidebarClose: 'Cerrar barra lateral',
+      sidebarOpen: 'Abrir barra lateral',
+      navLabel: 'Navegación principal',
     },
     nav: {
       overview: 'Inicio',
@@ -316,14 +340,18 @@ const content = {
     meta: {
       tagline: 'Full Stack Developer · Applied AI · Mexico',
       role: 'Full Stack Developer · Applied AI',
-      roleShort: 'FULL_STACK + AI',
+      roleShort: 'Full Stack · Applied AI',
       roleTags: ['Web', 'Applied AI', 'Custom systems', 'APIs', 'Automations'],
       skillDatabases: 'Databases · SQL / NoSQL',
       skillAutomation: 'Automation & integrations',
       phoneLabel: 'Phone',
-      available: 'Available · hiring',
-      systemStatus: 'system_status',
-      langToggleLabel: 'Cambiar a Español',
+      available: 'Open to projects',
+      langLabel: 'Language',
+      menuOpen: 'Open menu',
+      menuClose: 'Close menu',
+      sidebarClose: 'Close sidebar',
+      sidebarOpen: 'Open sidebar',
+      navLabel: 'Main navigation',
     },
     nav: {
       overview: 'Home',
@@ -563,6 +591,34 @@ const SectionTitle = ({ eyebrow, title, align = 'left' }) => (
   <div className={`section-title ${align === 'center' ? 'center' : ''}`}>
     <span>{eyebrow}</span>
     <h2>{title}</h2>
+  </div>
+);
+
+const Brand = ({ role, onClick }) => (
+  <a className="brand" href="#hero" onClick={onClick}>
+    <span className="avatar" aria-hidden="true">GM</span>
+    <span className="col">
+      <span className="nm">Gerardo Martínez</span>
+      <span className="rl">{role}</span>
+    </span>
+  </a>
+);
+
+const LangSwitch = ({ lang, onChange, label }) => (
+  <div className="lang" role="group" aria-label={label}>
+    {[['es', 'Español'], ['en', 'English']].map(([code, name]) => (
+      <button
+        key={code}
+        type="button"
+        lang={code}
+        className={lang === code ? 'on' : ''}
+        aria-pressed={lang === code}
+        aria-label={name}
+        onClick={() => onChange(code)}
+      >
+        {code.toUpperCase()}
+      </button>
+    ))}
   </div>
 );
 
@@ -1046,15 +1102,20 @@ const TerminalCLI = ({ lang, t }) => {
     }
   };
 
-  const handleSuggestClick = (cmd) => {
-    runCommand(cmd);
-    if (inputRef.current) {
+  // On touch devices focusing the input opens the keyboard, so only tapping the input itself should do that.
+  const focusInput = () => {
+    if (inputRef.current && window.matchMedia('(hover: hover)').matches) {
       inputRef.current.focus();
     }
   };
 
+  const handleSuggestClick = (cmd) => {
+    runCommand(cmd);
+    focusInput();
+  };
+
   return (
-    <div className="termwin" onClick={() => inputRef.current && inputRef.current.focus()}>
+    <div className="termwin" onClick={focusInput}>
       <div className="tbar">
         <div className="dots"><i></i><i></i><i></i></div>
         <div className="tt"><b>gerardo@fullstack</b>:<span style={{ color: 'var(--cyan)' }}> ~/cv</span> — live_terminal</div>
@@ -1135,7 +1196,86 @@ function App() {
   const [lang, setLang] = useState('es');
   const [scrollPercent, setScrollPercent] = useState(0);
   const [activeSection, setActiveSection] = useState('hero');
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(() => {
+    try {
+      return localStorage.getItem(SIDEBAR_STORAGE_KEY) === '1';
+    } catch {
+      return false;
+    }
+  });
+  const [sideTip, setSideTip] = useState(null);
+  const [cvMenuOpen, setCvMenuOpen] = useState(false);
+  const menuBtnRef = useRef(null);
+  const closeBtnRef = useRef(null);
+  const cvMenuRef = useRef(null);
   const t = content[lang];
+
+  const closeMenu = () => setMenuOpen(false);
+
+  const toggleSidebar = () => {
+    const next = !sidebarCollapsed;
+    setSidebarCollapsed(next);
+    setSideTip(null);
+    try {
+      localStorage.setItem(SIDEBAR_STORAGE_KEY, next ? '1' : '0');
+    } catch {
+      // Storage can be blocked; the sidebar still works for this visit
+    }
+  };
+
+  // Rendered outside the sidebar because its overflow would clip a CSS-only tooltip
+  const showSideTip = (e) => {
+    const el = e.target.closest('[data-tip]');
+    if (!el || (e.type === 'focus' && !el.matches(':focus-visible'))) {
+      setSideTip(null);
+      return;
+    }
+    const rect = el.getBoundingClientRect();
+    // In the rail, clear the sidebar's edge rather than sit on top of it
+    const anchorRight = sidebarCollapsed ? e.currentTarget.getBoundingClientRect().right : rect.right;
+    setSideTip({ text: el.dataset.tip, top: rect.top + rect.height / 2, left: anchorRight + 10 });
+  };
+
+  useEffect(() => {
+    document.documentElement.lang = lang;
+  }, [lang]);
+
+  // Mobile drawer: lock page scroll, move focus in and back out, close on Escape or when resized to desktop
+  useEffect(() => {
+    if (!menuOpen) return undefined;
+    const root = document.documentElement;
+    const menuBtn = menuBtnRef.current;
+    const desktop = window.matchMedia('(min-width: 961px)');
+    const onKeyDown = (e) => { if (e.key === 'Escape') setMenuOpen(false); };
+    const onViewportChange = (e) => { if (e.matches) setMenuOpen(false); };
+
+    root.classList.add('nav-locked');
+    closeBtnRef.current?.focus();
+    document.addEventListener('keydown', onKeyDown);
+    desktop.addEventListener('change', onViewportChange);
+    return () => {
+      root.classList.remove('nav-locked');
+      document.removeEventListener('keydown', onKeyDown);
+      desktop.removeEventListener('change', onViewportChange);
+      menuBtn?.focus({ preventScroll: true });
+    };
+  }, [menuOpen]);
+
+  // CV download menu: touch screens have no hover, so it opens on tap and closes on an outside tap or Escape
+  useEffect(() => {
+    if (!cvMenuOpen) return undefined;
+    const onPointerDown = (e) => {
+      if (!cvMenuRef.current?.contains(e.target)) setCvMenuOpen(false);
+    };
+    const onKeyDown = (e) => { if (e.key === 'Escape') setCvMenuOpen(false); };
+    document.addEventListener('pointerdown', onPointerDown);
+    document.addEventListener('keydown', onKeyDown);
+    return () => {
+      document.removeEventListener('pointerdown', onPointerDown);
+      document.removeEventListener('keydown', onKeyDown);
+    };
+  }, [cvMenuOpen]);
 
   // Scroll reveal & scroll progress observer
   useEffect(() => {
@@ -1145,9 +1285,8 @@ function App() {
       const pct = max > 0 ? (h.scrollTop / max) * 100 : 0;
       setScrollPercent(pct);
 
-      const sections = ['hero', 'about', 'exp', 'edu', 'skills', 'projects', 'services', 'certs', 'contact'];
       let current = 'hero';
-      for (const id of sections) {
+      for (const { id } of NAV_ITEMS) {
         const el = document.getElementById(id);
         if (el) {
           const rect = el.getBoundingClientRect();
@@ -1234,43 +1373,117 @@ function App() {
       <div className="bg"><div className="g1"></div><div className="g2"></div><div className="grid"></div><div className="scan"></div></div>
       <div className="prog" style={{ width: `${scrollPercent}%` }} />
 
-      <div className="shell">
-        {/* ===== SIDEBAR ===== */}
-        <aside className="side">
-          <div className="brand">
-            <div className="avatar"><div className="ring"></div><div className="in">GM</div></div>
-            <div className="col">
-              <div className="nm">Gerardo Martínez</div>
-              <div className="rl">{t.meta.roleShort}</div>
-            </div>
+      <div className={`shell${sidebarCollapsed ? ' collapsed' : ''}`}>
+        {/* ===== MOBILE TOPBAR ===== */}
+        <header className="mtop" inert={menuOpen}>
+          <Brand role={t.meta.roleShort} />
+          <div className="mtop-actions">
+            <LangSwitch lang={lang} onChange={setLang} label={t.meta.langLabel} />
+            <button
+              ref={menuBtnRef}
+              type="button"
+              className="iconbtn"
+              aria-label={t.meta.menuOpen}
+              aria-expanded={menuOpen}
+              aria-controls="site-nav"
+              onClick={() => setMenuOpen(true)}
+            >
+              <Menu size={20} />
+            </button>
           </div>
-          <div className="statusbox">
-            <div className="t">{t.meta.systemStatus}</div>
-            <div className="v"><span className="d"></span> {t.meta.available}</div>
+        </header>
+        <div className={`scrim${menuOpen ? ' on' : ''}`} onClick={closeMenu} aria-hidden="true" />
+
+        {/* ===== SIDEBAR (drawer on mobile) ===== */}
+        <aside
+          id="site-nav"
+          className={`side${menuOpen ? ' open' : ''}`}
+          onMouseOver={showSideTip}
+          onMouseLeave={() => setSideTip(null)}
+          onFocus={showSideTip}
+          onBlur={() => setSideTip(null)}
+        >
+          <div className="side-head">
+            <Brand role={t.meta.roleShort} onClick={closeMenu} />
+            <button
+              type="button"
+              className="iconbtn side-toggle"
+              aria-label={sidebarCollapsed ? t.meta.sidebarOpen : t.meta.sidebarClose}
+              aria-expanded={!sidebarCollapsed}
+              aria-controls="site-nav"
+              data-tip={sidebarCollapsed ? t.meta.sidebarOpen : t.meta.sidebarClose}
+              onClick={toggleSidebar}
+            >
+              {sidebarCollapsed ? <PanelLeftOpen size={18} aria-hidden="true" /> : <PanelLeftClose size={18} aria-hidden="true" />}
+            </button>
+            <button
+              ref={closeBtnRef}
+              type="button"
+              className="iconbtn side-close"
+              aria-label={t.meta.menuClose}
+              onClick={closeMenu}
+            >
+              <X size={20} />
+            </button>
           </div>
-          <nav className="snav">
-            <a href="#hero" className={activeSection === 'hero' ? 'on' : ''}><span className="ic">⌂</span> {t.nav.overview} <span className="no">00</span></a>
-            <a href="#about" className={activeSection === 'about' ? 'on' : ''}><span className="ic">✦</span> {t.nav.value} <span className="no">01</span></a>
-            <a href="#exp" className={activeSection === 'exp' ? 'on' : ''}><span className="ic">❯</span> {t.nav.experience} <span className="no">02</span></a>
-            <a href="#edu" className={activeSection === 'edu' ? 'on' : ''}><span className="ic">◇</span> {t.nav.education} <span className="no">03</span></a>
-            <a href="#skills" className={activeSection === 'skills' ? 'on' : ''}><span className="ic">▤</span> {t.nav.skills} <span className="no">04</span></a>
-            <a href="#projects" className={activeSection === 'projects' ? 'on' : ''}><span className="ic">◈</span> {t.nav.projects} <span className="no">05</span></a>
-            <a href="#services" className={activeSection === 'services' ? 'on' : ''}><span className="ic">⚙</span> {t.nav.services} <span className="no">06</span></a>
-            <a href="#certs" className={activeSection === 'certs' ? 'on' : ''}><span className="ic">❖</span> {t.nav.certs} <span className="no">07</span></a>
-            <a href="#contact" className={activeSection === 'contact' ? 'on' : ''}><span className="ic">@</span> {t.nav.contact} <span className="no">08</span></a>
+          <div className="avail" data-tip={sidebarCollapsed ? t.meta.available : undefined}>
+            <span className="d"></span> <span className="lbl">{t.meta.available}</span>
+          </div>
+          <nav className="snav" aria-label={t.meta.navLabel}>
+            {NAV_ITEMS.map((item) => {
+              const IconComponent = item.icon;
+              const isActive = activeSection === item.id;
+              return (
+                <a
+                  key={item.id}
+                  href={`#${item.id}`}
+                  className={isActive ? 'on' : ''}
+                  aria-current={isActive ? 'location' : undefined}
+                  data-tip={sidebarCollapsed ? t.nav[item.key] : undefined}
+                  onClick={closeMenu}
+                >
+                  <IconComponent size={16} aria-hidden="true" />
+                  <span className="lbl">{t.nav[item.key]}</span>
+                </a>
+              );
+            })}
           </nav>
           <div className="sfoot">
-            <a className="dl" href="#contact">{t.hero.secondary}</a>
-            <div className="switch">
-              <a onClick={() => setLang(lang === 'es' ? 'en' : 'es')}>
-                {t.meta.langToggleLabel}
-              </a>
+            <a className="dl" href="#contact" data-tip={sidebarCollapsed ? t.hero.secondary : undefined} onClick={closeMenu}>
+              <span className="lbl">{t.hero.secondary}</span>
+              <ArrowRight className="dl-arrow" size={15} aria-hidden="true" />
+              <MessageSquare className="dl-rail" size={16} aria-hidden="true" />
+            </a>
+            <div className="sfoot-row">
+              <div className="social">
+                {contactLinks.filter(item => item.icon !== Phone).map((item) => {
+                  const IconComponent = item.icon;
+                  return (
+                    <a
+                      key={item.label}
+                      className="iconbtn"
+                      href={item.href}
+                      aria-label={item.label}
+                      data-tip={item.label}
+                      {...(item.href.startsWith('http') ? { target: '_blank', rel: 'noreferrer' } : {})}
+                    >
+                      <IconComponent size={16} aria-hidden="true" />
+                    </a>
+                  );
+                })}
+              </div>
+              <LangSwitch lang={lang} onChange={setLang} label={t.meta.langLabel} />
             </div>
           </div>
         </aside>
+        {sideTip && (
+          <div className="sidetip" aria-hidden="true" style={{ top: sideTip.top, left: sideTip.left }}>
+            {sideTip.text}
+          </div>
+        )}
 
         {/* ===== MAIN ===== */}
-        <main>
+        <main inert={menuOpen}>
           {/* HERO */}
           <section className="hero" id="hero">
             <div className="rv in">
@@ -1283,20 +1496,26 @@ function App() {
               <div className="cta rv in d3">
                 <a className="btn solid" href="#contact">{lang === 'es' ? 'Trabajemos juntos' : 'Let\'s collaborate'}</a>
                 <a className="btn ghost" href="#projects">{lang === 'es' ? 'Ver proyectos →' : 'View projects →'}</a>
-                <div className="cv-dl-wrap">
-                  <button className="btn ghost cv-dl-btn">
+                <div ref={cvMenuRef} className={`cv-dl-wrap${cvMenuOpen ? ' open' : ''}`}>
+                  <button
+                    type="button"
+                    className="btn ghost cv-dl-btn"
+                    aria-haspopup="true"
+                    aria-expanded={cvMenuOpen}
+                    onClick={() => setCvMenuOpen(open => !open)}
+                  >
                     <Download size={15} style={{ marginRight: '5px' }} /> {t.hero.download}
                     <span className="cv-dl-arrow">▾</span>
                   </button>
                   <div className="cv-dl-menu">
-                    <a href={`${import.meta.env.BASE_URL}cv/CV_GerardoMartinez.pdf`} download>
+                    <a href={`${import.meta.env.BASE_URL}cv/CV_GerardoMartinez.pdf`} download onClick={() => setCvMenuOpen(false)}>
                       <span className="cv-dl-icon">✦</span>
                       <span>
                         <strong>{lang === 'es' ? 'Versión Premium' : 'Premium Version'}</strong>
                         <em>{lang === 'es' ? 'Dark · diseño visual' : 'Dark · visual design'}</em>
                       </span>
                     </a>
-                    <a href={`${import.meta.env.BASE_URL}cv/CV_GerardoMartinez_Business.pdf`} download>
+                    <a href={`${import.meta.env.BASE_URL}cv/CV_GerardoMartinez_Business.pdf`} download onClick={() => setCvMenuOpen(false)}>
                       <span className="cv-dl-icon">◈</span>
                       <span>
                         <strong>{lang === 'es' ? 'Versión Empresarial' : 'Business Version'}</strong>
